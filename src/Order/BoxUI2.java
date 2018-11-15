@@ -49,6 +49,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txt_quantity = new javax.swing.JTextField();
         jbtn_add = new javax.swing.JButton();
+        btn_clear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,6 +128,13 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         });
 
+        btn_clear.setText("Clear");
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clearActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -162,18 +170,20 @@ public class BoxUI2 extends javax.swing.JFrame {
                                 .addComponent(txt_cardboardGrade, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(txt_quantity, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(rbtn_yes2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(rbtn_no2))))))
                 .addContainerGap(131, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(167, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jbtn_completeOrder)
                         .addGap(38, 38, 38))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_clear)
+                        .addGap(101, 101, 101)
                         .addComponent(jbtn_add)
                         .addGap(123, 123, 123))))
         );
@@ -211,7 +221,9 @@ public class BoxUI2 extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jbtn_add)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_add)
+                    .addComponent(btn_clear))
                 .addGap(18, 18, 18)
                 .addComponent(jbtn_completeOrder)
                 .addGap(22, 22, 22))
@@ -245,7 +257,11 @@ public class BoxUI2 extends javax.swing.JFrame {
         String boxSize = txt_boxSize.getText();
         String cardboardGrade = txt_cardboardGrade.getText();
         String quantity = txt_quantity.getText();
-        int colourPrint = 3;
+        int colourPrint;
+        boolean reBottom;
+        boolean reCorners;
+        
+        //colour print
         if (rbtn_0.isSelected() == true) {
             colourPrint = 0;
         }
@@ -255,6 +271,14 @@ public class BoxUI2 extends javax.swing.JFrame {
         if (rbtn_2.isSelected() == true) {
             colourPrint = 2;
         }
+        //reinforced bottom
+        if (rbtn_yes1.isSelected() == true) {
+            reBottom = true;
+        }
+        if (rbtn_yes2.isSelected() == true) {
+            reCorners = true;
+        }
+        clearValues();
         
     }//GEN-LAST:event_jbtn_addActionPerformed
 
@@ -262,6 +286,25 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_boxSizeActionPerformed
 
+    private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
+        // TODO add your handling code here:
+        clearValues();
+    }//GEN-LAST:event_btn_clearActionPerformed
+
+    
+    private void clearValues(){
+        txt_boxSize.setText("");
+        txt_cardboardGrade.setText("");
+        txt_quantity.setText("");
+        rbtn_0.setSelected(false);
+        rbtn_1.setSelected(false);
+        rbtn_2.setSelected(false);
+        rbtn_yes1.setSelected(false);
+        rbtn_no1.setSelected(false);
+        rbtn_yes2.setSelected(false);
+        rbtn_no2.setSelected(false);
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -298,6 +341,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_clear;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
