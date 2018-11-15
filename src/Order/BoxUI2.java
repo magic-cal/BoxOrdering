@@ -27,32 +27,35 @@ public class BoxUI2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        jbtn_completeOrder = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txt_boxSize = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txt_cardboardGrade = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbtn_0 = new javax.swing.JRadioButton();
+        rbtn_1 = new javax.swing.JRadioButton();
+        rbtn_2 = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
+        rbtn_yes1 = new javax.swing.JRadioButton();
+        rbtn_no1 = new javax.swing.JRadioButton();
+        rbtn_yes2 = new javax.swing.JRadioButton();
+        rbtn_no2 = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txt_quantity = new javax.swing.JTextField();
+        jbtn_add = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Complete Order");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_completeOrder.setText("Complete Order");
+        jbtn_completeOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbtn_completeOrderActionPerformed(evt);
             }
         });
 
@@ -60,65 +63,67 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         jLabel2.setText("Box size:");
 
-        jTextField1.setText("...");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txt_boxSize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txt_boxSizeActionPerformed(evt);
             }
         });
 
         jLabel3.setText("Cardboard grade:");
 
-        jTextField2.setText("...");
-
         jLabel4.setText("Colour print:");
 
-        jRadioButton3.setText("0");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(rbtn_0);
+        rbtn_0.setText("0");
+        rbtn_0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                rbtn_0ActionPerformed(evt);
             }
         });
 
-        jRadioButton1.setText("1");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(rbtn_1);
+        rbtn_1.setText("1");
+        rbtn_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                rbtn_1ActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("2");
+        buttonGroup1.add(rbtn_2);
+        rbtn_2.setText("2");
 
         jLabel5.setText("Renforced Bottom:");
 
         jLabel6.setText("Renforced Corners:");
 
-        jRadioButton4.setText("Yes");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(rbtn_yes1);
+        rbtn_yes1.setText("Yes");
+        rbtn_yes1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                rbtn_yes1ActionPerformed(evt);
             }
         });
 
-        jRadioButton5.setText("No");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(rbtn_no1);
+        rbtn_no1.setText("No");
+        rbtn_no1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
+                rbtn_no1ActionPerformed(evt);
             }
         });
 
-        jRadioButton6.setText("Yes");
+        buttonGroup3.add(rbtn_yes2);
+        rbtn_yes2.setText("Yes");
 
-        jRadioButton7.setText("No");
+        buttonGroup3.add(rbtn_no2);
+        rbtn_no2.setText("No");
 
         jLabel7.setText("Quantity:");
 
-        jTextField3.setText("...");
-
-        jButton2.setText("Add");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_add.setText("Add");
+        jbtn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbtn_addActionPerformed(evt);
             }
         });
 
@@ -143,33 +148,33 @@ public class BoxUI2 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton3)
+                                .addComponent(rbtn_0)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton1)
+                                .addComponent(rbtn_1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2))
+                                .addComponent(rbtn_2))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton4)
+                                .addComponent(rbtn_yes1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton5))
+                                .addComponent(rbtn_no1))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(txt_boxSize, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                                .addComponent(txt_cardboardGrade, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_quantity, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jRadioButton6)
+                                    .addComponent(rbtn_yes2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jRadioButton7))))))
+                                    .addComponent(rbtn_no2))))))
                 .addContainerGap(131, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jbtn_completeOrder)
                         .addGap(38, 38, 38))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(jbtn_add)
                         .addGap(123, 123, 123))))
         );
         layout.setVerticalGroup(
@@ -180,68 +185,82 @@ public class BoxUI2 extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_boxSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(rbtn_0)
+                    .addComponent(rbtn_1)
+                    .addComponent(rbtn_2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
+                    .addComponent(rbtn_yes1)
+                    .addComponent(rbtn_no1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton7))
+                    .addComponent(rbtn_yes2)
+                    .addComponent(rbtn_no2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(jbtn_add)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(jbtn_completeOrder)
                 .addGap(22, 22, 22))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void rbtn_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_0ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_rbtn_0ActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void rbtn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_rbtn_1ActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void rbtn_yes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_yes1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_rbtn_yes1ActionPerformed
 
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+    private void rbtn_no1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_no1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
+    }//GEN-LAST:event_rbtn_no1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbtn_completeOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_completeOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbtn_completeOrderActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbtn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_addActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        String boxSize = txt_boxSize.getText();
+        String cardboardGrade = txt_cardboardGrade.getText();
+        String quantity = txt_quantity.getText();
+        int colourPrint = 3;
+        if (rbtn_0.isSelected() == true) {
+            colourPrint = 0;
+        }
+        if (rbtn_1.isSelected() == true) {
+            colourPrint = 1;
+        }
+        if (rbtn_2.isSelected() == true) {
+            colourPrint = 2;
+        }
+        
+    }//GEN-LAST:event_jbtn_addActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_boxSizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_boxSizeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txt_boxSizeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,8 +298,9 @@ public class BoxUI2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -288,15 +308,17 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton jbtn_add;
+    private javax.swing.JButton jbtn_completeOrder;
+    private javax.swing.JRadioButton rbtn_0;
+    private javax.swing.JRadioButton rbtn_1;
+    private javax.swing.JRadioButton rbtn_2;
+    private javax.swing.JRadioButton rbtn_no1;
+    private javax.swing.JRadioButton rbtn_no2;
+    private javax.swing.JRadioButton rbtn_yes1;
+    private javax.swing.JRadioButton rbtn_yes2;
+    private javax.swing.JTextField txt_boxSize;
+    private javax.swing.JTextField txt_cardboardGrade;
+    private javax.swing.JTextField txt_quantity;
     // End of variables declaration//GEN-END:variables
 }

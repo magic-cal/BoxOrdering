@@ -14,17 +14,15 @@ public class box {
     private int colourPrint;
     private boolean reBottom;
     private boolean reCorners;
-    private int quantity;
     // Constructor
     public box() {
     }
     // Constructor
-    public box(float boxSize,  int boxGrade, boolean boxReBottom, boolean boxReCorners, int boxQuantity) {
+    public box(float boxSize,  int boxGrade, boolean boxReBottom, boolean boxReCorners) {
         size = boxSize;
         grade = boxGrade;
         reBottom = boxReBottom;
         reCorners = boxReCorners;
-        quantity = boxQuantity;
     }
     //Accessor Methods
     public float getSize() {
