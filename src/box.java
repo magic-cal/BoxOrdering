@@ -8,7 +8,7 @@
  *
  * @author felixmayo
  */
-public class Box {
+public class box {
     private float size;      // class instance variables
     private int grade;
     private int colourPrint;
@@ -16,10 +16,10 @@ public class Box {
     private boolean reCorners;
     private int quantity;
     // Constructor
-    public Box() {
+    public box() {
     }
     // Constructor
-    public Box(float boxSize,  int boxGrade, boolean boxReBottom, boolean boxReCorners, int boxQuantity) {
+    public box(float boxSize,  int boxGrade, boolean boxReBottom, boolean boxReCorners, int boxQuantity) {
         size = boxSize;
         grade = boxGrade;
         reBottom = boxReBottom;
