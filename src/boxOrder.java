@@ -15,7 +15,7 @@ public class boxOrder {
     // Constructor
     public boxOrder(int boxID, Object boxObject, int boxQuantity) {
         ID = boxID;
-        box = boxObject;s
+        box = boxObject;
         quantity = boxQuantity;
     }
     
