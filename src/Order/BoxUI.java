@@ -80,21 +80,25 @@ public class BoxUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ExitActionPerformed
-        // TODO add your handling code here:
+      BoxUI.this.setVisible(false);
+        BoxUI.this.dispose();
     }//GEN-LAST:event_jbtn_ExitActionPerformed
 
     private void jbtn_ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ContinueActionPerformed
         // TODO add your handling code here:
         BoxUI2 Info = new BoxUI2();
         Info.setVisible(true);
+        BoxUI.this.setVisible(false);
+        BoxUI.this.dispose();
+        
     }//GEN-LAST:event_jbtn_ContinueActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        System.out.println("HHFJH");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        jLabel1.setText("Exit Been Clicked");
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
