@@ -9,6 +9,7 @@ package Order;
  *
  * @author Callum
  */
+import Order.BoxUI2;
 public class BoxUI extends javax.swing.JFrame {
 
     /**
@@ -27,30 +28,25 @@ public class BoxUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jbtn_Exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jbtn_Continue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Exit");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_Exit.setText("Exit");
+        jbtn_Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbtn_ExitActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Welcome to the Box Ordering System");
 
-        jButton2.setText("Continue");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_Continue.setText("Continue");
+        jbtn_Continue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbtn_ContinueActionPerformed(evt);
             }
         });
 
@@ -62,9 +58,9 @@ public class BoxUI extends javax.swing.JFrame {
                 .addGap(92, 92, 92)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jbtn_Exit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(jbtn_Continue))
                     .addComponent(jLabel1))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
@@ -75,17 +71,23 @@ public class BoxUI extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(jbtn_Continue)
+                    .addComponent(jbtn_Exit))
                 .addGap(36, 36, 36))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbtn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbtn_ExitActionPerformed
+
+    private void jbtn_ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ContinueActionPerformed
+        // TODO add your handling code here:
+        BoxUI2 Info = new BoxUI2();
+        Info.setVisible(true);
+    }//GEN-LAST:event_jbtn_ContinueActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -102,7 +104,7 @@ public class BoxUI extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -131,8 +133,8 @@ public class BoxUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbtn_Continue;
+    private javax.swing.JButton jbtn_Exit;
     // End of variables declaration//GEN-END:variables
 }

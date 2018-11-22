@@ -9,11 +9,13 @@
  * @author felixmayo
  */
 public class boxOrder {
-    private int ID;      // class instance variables
+    private int ID;
+    private Object box;// class instance variables
     private int quantity;
     // Constructor
-    public boxOrder(int boxID, int boxQuantity) {
+    public boxOrder(int boxID, Object boxObject, int boxQuantity) {
         ID = boxID;
+        box = boxObject;
         quantity = boxQuantity;
     }
     
