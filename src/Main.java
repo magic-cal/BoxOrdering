@@ -1,4 +1,5 @@
 
+import Order.BoxUI;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,7 +15,6 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String args[]){
-    boxOrder order = new boxOrder();
-      
+   BoxUI ui = new BoxUI();
     }
 }
