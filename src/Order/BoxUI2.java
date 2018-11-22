@@ -297,8 +297,9 @@ public class BoxUI2 extends javax.swing.JFrame {
             reCorners = true;
         }
         
-        if (colourPrint == 3 && Integer.parseInt(boxSize) > 0 && boxSize != "" && Integer.parseInt(quantity) > 0)  {
+        if (colourPrint == 3 && Integer.parseInt(boxSize) > 0 && Integer.parseInt(quantity) > 0)  {
             // add the box as an object
+            System.out.println("test");
         }
         else {
         clearValues();
