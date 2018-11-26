@@ -17,7 +17,7 @@ import java.util.Iterator;
 public class OrderManager {
     ArrayList <Box> boxes = new ArrayList<Box>();
     public OrderManager(){
-        this.addBox(0, 0, 0, 0, true);
+        this.addBox(5, 6, 7, 3, true);
     }
     
     public void addBox(float width, float length, float height,int grade,boolean sealedTop){
@@ -49,6 +49,17 @@ public class OrderManager {
     
     public int getNumBoxes(){
         return boxes.size();
+    }
+    
+    public int testNo(String toTest){
+        int newNo =-1;
+        try{
+            newNo= Integer.parseInt(toTest);
+        }catch(Exception e){
+            System.out.println("ERROR");
+        }
+        
+        return newNo;
     }
     
 }
