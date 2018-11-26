@@ -12,12 +12,12 @@ import static java.lang.Integer.parseInt;
  * @author felixmayo
  */
 public class BoxUI2 extends javax.swing.JFrame {
-
-    /**
-     * Creates new form BoxUI2
-     */
+        OrderManager orderManager;
+    
     public BoxUI2() {
         initComponents();
+        orderManager = new OrderManager();
+        
     }
 
     /**
@@ -139,17 +139,6 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -300,6 +289,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         if (colourPrint == 3 && Integer.parseInt(boxSize) > 0 && Integer.parseInt(quantity) > 0)  {
             // add the box as an object
             System.out.println("test");
+//            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
         }
         else {
         clearValues();
@@ -329,6 +319,11 @@ public class BoxUI2 extends javax.swing.JFrame {
         rbtn_yes2.setSelected(false);
         rbtn_no2.setSelected(false);
 
+    }
+    
+    
+    private void updateValues(){
+//        jTable1.setModel(tm);
     }
     /**
      * @param args the command line arguments
