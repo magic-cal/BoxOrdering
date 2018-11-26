@@ -1,3 +1,5 @@
+package Order;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,21 +10,21 @@
  *
  * @author felixmayo
  */
-public class box {
+public class Box {
     private float size;      // class instance variables
     private int grade;
+    private boolean sealableTop;
     private int colourPrint;
     private boolean reBottom;
     private boolean reCorners;
+
+    
     // Constructor
-    public box() {
-    }
-    // Constructor
-    public box(float boxSize,  int boxGrade, boolean boxReBottom, boolean boxReCorners) {
-        size = boxSize;
-        grade = boxGrade;
-        reBottom = boxReBottom;
-        reCorners = boxReCorners;
+    public Box(float boxSize,  int boxGrade, boolean boxSealableTop) {
+        this.size = boxSize;
+        this.grade = boxGrade;
+        this.sealableTop = boxSealableTop;
+
     }
     //Accessor Methods
     public float getSize() {
@@ -49,7 +51,7 @@ public class box {
     //Methods
 
     public int type() {
-      //calculates the grade type of the box
+      //calculates the grade type of the Box
      int boxType = 0;
 
         if (grade >= 1 && grade <= 3 && colourPrint == 0 && reBottom == false && reCorners == false ) {
@@ -75,11 +77,38 @@ public class box {
      return boxType;
     }
 
-    public double cost() {
-     double cost = 0.0;
-
-
+    
+    public double getBasicCost(){
+      double cost = 0.0;
+     double gradeCost = 0;
+     switch (grade){
+         
+         case 1:
+             gradeCost = 0.55;
+             break;
+         case 2:
+             gradeCost = 0.65;
+             break;
+         case 3:
+             gradeCost = 0.82;
+             break;
+         case 4:
+             gradeCost = 0.98;
+             break;
+         case 5:
+             gradeCost = 1.5;
+             break;
+         default:
+             System.out.println("ERROR IN GRADING COST");
+             break;
+           }
+     cost+= gradeCost*size;
      return cost;
+    }
+    
+    
+    public double getCost() {
+     return getBasicCost();
     }
 
 }
