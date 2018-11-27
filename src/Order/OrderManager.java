@@ -62,5 +62,31 @@ public class OrderManager {
         return newNo;
     }
     
+        public int type() {
+      //calculates the grade type of the Box
+     int boxType = 0;
+
+        if (grade >= 1 && grade <= 3 && colourPrint == 0 && reBottom == false && reCorners == false ) {
+            boxType = 1;
+        }
+
+        else if (grade >= 2 && grade <= 4 && colourPrint == 1 && reBottom == false && reCorners == false ) {
+            boxType = 2;
+        }
+
+        else if (grade >= 2 && grade <= 5 && colourPrint == 2 && reBottom == false && reCorners == false ) {
+            boxType = 3;
+        }
+
+        else if (grade >= 2 && grade <= 5 && colourPrint == 2 && reBottom == true && reCorners == false ) {
+            boxType = 4;
+        }
+
+        else if (grade >= 3 && grade <= 5 && colourPrint == 2 && reBottom == true && reCorners == true ) {
+            boxType = 5;
+        }
+
+     return boxType;
+    }
 }
 
