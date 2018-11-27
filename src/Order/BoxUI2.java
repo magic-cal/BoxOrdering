@@ -383,10 +383,10 @@ public class BoxUI2 extends javax.swing.JFrame {
         }
         
         //reinforced bottom
-        boolean reBottomr = rbtn_yes1.isSelected();
+        boolean reBottom = rbtn_yes1.isSelected();
         boolean reCorners = rbtn_yes2.isSelected();
   
-        orderManager.addBox(1, 1, boxSize,cardboardGrade,reBottomr);
+        orderManager.addBox(1, 1, boxSize,cardboardGrade,reBottom);
         
         if (colourPrint == 3 && boxSize > 0 && quantity > 0)  {
             // add the box as an object
