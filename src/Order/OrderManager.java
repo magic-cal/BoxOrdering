@@ -1,14 +1,8 @@
 package Order;
 
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Iterator;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -17,18 +11,41 @@ import java.util.Iterator;
 public class OrderManager {
     ArrayList <Box> boxes = new ArrayList<Box>();
     public OrderManager(){
-        this.addBox(5, 6, 7, 3, true);
+//        this.addBox();
     }
-    
-    public void addBox(float width, float length, float height,int grade,boolean sealedTop){
-        float size = getSize(width,length,height);
-        boxes.add(new BoxType2(size,grade,sealedTop));
+//    boxWidth,boxLength,boxHeight,cardboardGrade,colourPrint,reBottom,reCorners,sealableTop,quantity
+    public boolean addBox(float width, float length, float height,int grade,
+            int colourPrint, boolean reBottom, boolean reCorners,
+            boolean sealedTop, int quantity){
+            float size = getSize(width,length,height);
+            switch (boxType(grade,colourPrint,reBottom,reCorners)){
+//                @todo ADD OTHER BOX TYPES HERE
+                case 1:
+                    System.out.println("box 1");
+                    return true;
+                case 2:
+                    System.out.println("box 2");
+                    boxes.add(new BoxType2(size,grade,sealedTop));
+                    return true;
+                case 3:
+                    System.out.println("box 3");
+                    return true;
+                case 4:
+                    System.out.println("box 4");
+                    return true;
+                case 5:
+                    System.out.println("box 5");
+                    return true;
+                default:
+                    System.out.println("ERROR BOX SORT DEFAULT");
+                    return false;  
+            }
     }
     
     public void removeBox(int boxIndex){
         boxes.remove(boxIndex);
     }
-    
+   
     
     private float getSize(float width, float length, float height){
         float size = width*length*height;
@@ -40,6 +57,7 @@ public class OrderManager {
     }
     
     public double getAllCosts(){
+
         double totalCost = 0.00;
         for (Box currentBox: boxes){
             totalCost+=currentBox.getCost();
@@ -58,8 +76,34 @@ public class OrderManager {
         }catch(Exception e){
             System.out.println("ERROR");
         }
-        
         return newNo;
+    }
+    
+    public int boxType(int grade, int colourPrint,boolean reBottom,boolean reCorners) {
+      //calculates the grade type of the Box
+     int boxType = -1;
+
+        if (grade >= 1 && grade <= 3 && colourPrint == 0 && !reBottom && !reCorners) {
+            boxType = 1;
+        }
+
+        else if (grade >= 2 && grade <= 4 && colourPrint == 1 && !reBottom && !reCorners ) {
+            boxType = 2;
+        }
+
+        else if (grade >= 2 && grade <= 5 && colourPrint == 2 && !reBottom && !reCorners) {
+            boxType = 3;
+        }
+
+        else if (grade >= 2 && grade <= 5 && colourPrint == 2 && reBottom && !reCorners) {
+            boxType = 4;
+        }
+
+        else if (grade >= 3 && grade <= 5 && colourPrint == 2 && reBottom && reCorners  ) {
+            boxType = 5;
+        }
+
+     return boxType;
     }
     
         

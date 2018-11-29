@@ -10,6 +10,7 @@ package Order;
  * @author Callum
  */
 import Order.BoxUI2;
+import javax.swing.JOptionPane;
 public class BoxUI extends javax.swing.JFrame {
 
     /**
@@ -94,7 +95,7 @@ public class BoxUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_ContinueActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        System.out.println("HHFJH");
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
