@@ -6,19 +6,21 @@
 package Order;
 
 import static java.lang.Integer.parseInt;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author felixmayo
  */
 public class BoxUI2 extends javax.swing.JFrame {
-        OrderManager orderManager;
-    
+
+    OrderManager orderManager;
+
     public BoxUI2() {
         initComponents();
         orderManager = new OrderManager();
         updateValues();
-        
+
     }
 
     /**
@@ -29,11 +31,14 @@ public class BoxUI2 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jbtn_completeOrder = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -54,20 +59,39 @@ public class BoxUI2 extends javax.swing.JFrame {
         txt_quantity = new javax.swing.JTextField();
         jbtn_add = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        noBoxes = new javax.swing.JLabel();
+        totCost = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txt_boxWidth = new javax.swing.JTextField();
         txt_boxLength = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        rbtn_yes3 = new javax.swing.JRadioButton();
+        buttonSealableTop = new javax.swing.JRadioButton();
         rbtn_no3 = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jbtn_completeOrder.setText("Complete Order");
         jbtn_completeOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -75,20 +99,75 @@ public class BoxUI2 extends javax.swing.JFrame {
                 jbtn_completeOrderActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 12, 13, 77);
+        getContentPane().add(jbtn_completeOrder, gridBagConstraints);
 
         jLabel1.setText("Box Order Form");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 54, 0, 0);
+        getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("Box Width:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 94, 0, 0);
+        getContentPane().add(jLabel2, gridBagConstraints);
 
         txt_boxHeight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_boxHeightActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = 127;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 18, 0, 0);
+        getContentPane().add(txt_boxHeight, gridBagConstraints);
 
         jLabel3.setText("Cardboard grade:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 54, 0, 0);
+        getContentPane().add(jLabel3, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = 127;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 18, 0, 0);
+        getContentPane().add(txt_cardboardGrade, gridBagConstraints);
 
         jLabel4.setText("Colour print:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(22, 52, 0, 0);
+        getContentPane().add(jLabel4, gridBagConstraints);
 
         buttonGroup1.add(rbtn_0);
         rbtn_0.setText("0");
@@ -97,6 +176,13 @@ public class BoxUI2 extends javax.swing.JFrame {
                 rbtn_0ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 18, 0, 0);
+        getContentPane().add(rbtn_0, gridBagConstraints);
 
         buttonGroup1.add(rbtn_1);
         rbtn_1.setText("1");
@@ -105,13 +191,46 @@ public class BoxUI2 extends javax.swing.JFrame {
                 rbtn_1ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 0, 0, 0);
+        getContentPane().add(rbtn_1, gridBagConstraints);
 
         buttonGroup1.add(rbtn_2);
         rbtn_2.setText("2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 15;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 0, 0, 0);
+        getContentPane().add(rbtn_2, gridBagConstraints);
 
         jLabel5.setText("Renforced Bottom:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipady = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(9, 17, 0, 0);
+        getContentPane().add(jLabel5, gridBagConstraints);
 
         jLabel6.setText("Renforced Corners:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 13, 0, 0);
+        getContentPane().add(jLabel6, gridBagConstraints);
 
         buttonGroup2.add(rbtn_yes1);
         rbtn_yes1.setText("Yes");
@@ -120,6 +239,14 @@ public class BoxUI2 extends javax.swing.JFrame {
                 rbtn_yes1ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 25, 0, 0);
+        getContentPane().add(rbtn_yes1, gridBagConstraints);
 
         buttonGroup2.add(rbtn_no1);
         rbtn_no1.setText("No");
@@ -128,14 +255,54 @@ public class BoxUI2 extends javax.swing.JFrame {
                 rbtn_no1ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 12;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 0, 0);
+        getContentPane().add(rbtn_no1, gridBagConstraints);
 
         buttonGroup3.add(rbtn_yes2);
         rbtn_yes2.setText("Yes");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(1, 25, 0, 0);
+        getContentPane().add(rbtn_yes2, gridBagConstraints);
 
         buttonGroup3.add(rbtn_no2);
         rbtn_no2.setText("No");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 12;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(1, 0, 0, 0);
+        getContentPane().add(rbtn_no2, gridBagConstraints);
 
         jLabel7.setText("Quantity:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 104, 0, 0);
+        getContentPane().add(jLabel7, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 126;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(7, 18, 0, 0);
+        getContentPane().add(txt_quantity, gridBagConstraints);
 
         jbtn_add.setText("Add");
         jbtn_add.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +310,13 @@ public class BoxUI2 extends javax.swing.JFrame {
                 jbtn_addActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 21;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 7, 0, 77);
+        getContentPane().add(jbtn_add, gridBagConstraints);
 
         btn_clear.setText("Clear");
         btn_clear.addActionListener(new java.awt.event.ActionListener() {
@@ -150,41 +324,121 @@ public class BoxUI2 extends javax.swing.JFrame {
                 btn_clearActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
+        getContentPane().add(btn_clear, gridBagConstraints);
 
-        jLabel8.setText("jLabel8");
+        noBoxes.setText("jLabel8");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(17, 74, 0, 0);
+        getContentPane().add(noBoxes, gridBagConstraints);
 
-        jLabel9.setText("jLabel9");
+        totCost.setText("jLabel9");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(17, 37, 0, 0);
+        getContentPane().add(totCost, gridBagConstraints);
 
         jLabel10.setText("Box Length:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(7, 89, 0, 0);
+        getContentPane().add(jLabel10, gridBagConstraints);
 
         jLabel11.setText("Box Height:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 91, 0, 0);
+        getContentPane().add(jLabel11, gridBagConstraints);
 
         txt_boxWidth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_boxWidthActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = 127;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 18, 0, 0);
+        getContentPane().add(txt_boxWidth, gridBagConstraints);
 
         txt_boxLength.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_boxLengthActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 127;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 18, 0, 0);
+        getContentPane().add(txt_boxLength, gridBagConstraints);
 
         jLabel12.setText("Sealable Top:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 45, 0, 0);
+        getContentPane().add(jLabel12, gridBagConstraints);
 
-        buttonGroup4.add(rbtn_yes3);
-        rbtn_yes3.setText("Yes");
-        rbtn_yes3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup4.add(buttonSealableTop);
+        buttonSealableTop.setText("Yes");
+        buttonSealableTop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn_yes3ActionPerformed(evt);
+                buttonSealableTopActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        getContentPane().add(buttonSealableTop, gridBagConstraints);
 
         buttonGroup4.add(rbtn_no3);
         rbtn_no3.setText("No");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 12;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(rbtn_no3, gridBagConstraints);
 
         jLabel13.setText("Extras");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 26, 0, 0);
+        getContentPane().add(jLabel13, gridBagConstraints);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -193,147 +447,18 @@ public class BoxUI2 extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(jLabel8)
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbtn_completeOrder))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel10)
-                                        .addComponent(jLabel11)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel7))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txt_cardboardGrade, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txt_boxHeight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(txt_boxWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txt_boxLength, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(btn_clear)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jbtn_add))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(13, 13, 13)
-                                            .addComponent(jLabel13))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGap(4, 4, 4)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(jLabel5)
-                                                            .addComponent(jLabel4)))
-                                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
-                                            .addGap(18, 18, 18)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(rbtn_0)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(rbtn_1)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(rbtn_2))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addGap(7, 7, 7)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(rbtn_yes2)
-                                                        .addComponent(rbtn_yes1)
-                                                        .addComponent(rbtn_yes3))
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(rbtn_no2)
-                                                        .addComponent(rbtn_no1)
-                                                        .addComponent(rbtn_no3))))))
-                                    .addGap(65, 65, 65))))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(77, 77, 77))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_boxWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_boxLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_boxHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(rbtn_0)
-                            .addComponent(rbtn_1)
-                            .addComponent(rbtn_2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rbtn_yes1)
-                            .addComponent(rbtn_no1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbtn_yes2)
-                            .addComponent(rbtn_no2)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbtn_yes3)
-                            .addComponent(rbtn_no3)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbtn_add)
-                            .addComponent(btn_clear))))
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jbtn_completeOrder))
-                .addGap(13, 13, 13))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 19;
+        gridBagConstraints.gridwidth = 22;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 617;
+        gridBagConstraints.ipady = 151;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(12, 54, 0, 77);
+        getContentPane().add(jScrollPane1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -360,43 +485,46 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void jbtn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_addActionPerformed
         // TODO add your handling code here:
-        int boxSize;
+        boolean created;
+        int boxHeight;
+        int boxWidth;
+        int boxLength;
         int cardboardGrade;
         int quantity;
-         
-        boxSize =orderManager.testNo(txt_boxHeight.getText());
+        boolean sealableTop = buttonSealableTop.isSelected();
+        int colourPrint = 3;
+        boolean reBottom = rbtn_yes1.isSelected();
+        boolean reCorners = rbtn_yes2.isSelected();
+
+        boxHeight = orderManager.testNo(txt_boxHeight.getText());
+        boxWidth = orderManager.testNo(txt_boxWidth.getText());
+        boxLength = orderManager.testNo(txt_boxLength.getText());
         cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
         quantity = orderManager.testNo(txt_quantity.getText());
-     
-        int colourPrint = 3;
-        
-       
+
         //colour print
         if (rbtn_0.isSelected() == true) {
             colourPrint = 0;
-        }
-        else if (rbtn_1.isSelected() == true) {
+        } else if (rbtn_1.isSelected() == true) {
             colourPrint = 1;
-        }
-        else if (rbtn_2.isSelected() == true) {
+        } else if (rbtn_2.isSelected() == true) {
             colourPrint = 2;
         }
-        
-        //reinforced bottom
-        boolean reBottom = rbtn_yes1.isSelected();
-        boolean reCorners = rbtn_yes2.isSelected();
-  
-        orderManager.addBox(1, 1, boxSize,cardboardGrade,reBottom);
-        
-        if (colourPrint == 3 && boxSize > 0 && quantity > 0)  {
+
+//        checks if the box has been created
+        created = orderManager.addBox(boxWidth, boxLength, boxHeight,
+                cardboardGrade, colourPrint, reBottom, reCorners,
+                sealableTop, quantity);
+
+        if (colourPrint == 3 && boxHeight > 0 && quantity > 0) {
             // add the box as an object
             System.out.println("test");
 //            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
-        }
-        else {
-        clearValues();
+        } else {
+            clearValues();
         }
         updateValues();
+        outputPrompt(created);
 
     }//GEN-LAST:event_jbtn_addActionPerformed
 
@@ -417,29 +545,43 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_boxLengthActionPerformed
 
-    private void rbtn_yes3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_yes3ActionPerformed
+    private void buttonSealableTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSealableTopActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rbtn_yes3ActionPerformed
+    }//GEN-LAST:event_buttonSealableTopActionPerformed
 
-    
-    private void clearValues(){
-        txt_boxHeight.setText("");
-        txt_cardboardGrade.setText("");
-        txt_quantity.setText("");
-        rbtn_0.setSelected(false);
-        rbtn_1.setSelected(false);
-        rbtn_2.setSelected(false);
-        rbtn_yes1.setSelected(false);
-        rbtn_no1.setSelected(false);
-        rbtn_yes2.setSelected(false);
-        rbtn_no2.setSelected(false);
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+
+        int confirmed = JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to exit?", "Exit Program",
+                JOptionPane.YES_NO_OPTION);
+        if (confirmed == JOptionPane.YES_OPTION) {
+//              dispose();
+        } else {
+            System.out.println("We need to add this not functionality");
+//@TODO: Fix this
+        }
+    }//GEN-LAST:event_formWindowClosing
+
+    private void clearValues() {
+//@todo Uncomment this section:
+
+//        txt_boxHeight.setText("");
+//        txt_cardboardGrade.setText("");
+//        txt_quantity.setText("");
+//        rbtn_0.setSelected(false);
+//        rbtn_1.setSelected(false);
+//        rbtn_2.setSelected(false);
+//        rbtn_yes1.setSelected(false);
+//        rbtn_no1.setSelected(false);
+//        rbtn_yes2.setSelected(false);
+//        rbtn_no2.setSelected(false);
     }
-    
-    
-    private void updateValues(){
-        jLabel8.setText("Num boxes: "+orderManager.getNumBoxes());
-        jLabel9.setText("TotalCost: "+orderManager.getAllCosts());
+
+    private void updateValues() {
+        noBoxes.setText("Num boxes: " + orderManager.getNumBoxes());
+        totCost.setText("TotalCost: " + orderManager.getAllCosts());
     }
+
     /**
      * @param args the command line arguments
      */
@@ -481,6 +623,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JRadioButton buttonSealableTop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -492,12 +635,13 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbtn_add;
     private javax.swing.JButton jbtn_completeOrder;
+    private javax.swing.JLabel noBoxes;
     private javax.swing.JRadioButton rbtn_0;
     private javax.swing.JRadioButton rbtn_1;
     private javax.swing.JRadioButton rbtn_2;
@@ -506,11 +650,24 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtn_no3;
     private javax.swing.JRadioButton rbtn_yes1;
     private javax.swing.JRadioButton rbtn_yes2;
-    private javax.swing.JRadioButton rbtn_yes3;
+    private javax.swing.JLabel totCost;
     private javax.swing.JTextField txt_boxHeight;
     private javax.swing.JTextField txt_boxLength;
     private javax.swing.JTextField txt_boxWidth;
     private javax.swing.JTextField txt_cardboardGrade;
     private javax.swing.JTextField txt_quantity;
     // End of variables declaration//GEN-END:variables
+
+    private void outputPrompt(boolean created) {
+//        JOptionPane.showConfirmDialog(null, 
+//        "Are you sure you want to exit?", "Exit Program",
+//        JOptionPane.YES_NO_OPTION);
+        if (!created) {
+            JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add\nCheck Inputs", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+
+        } else {
+            JOptionPane.showConfirmDialog(null, "New Boxes added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
+
+        }
+    }
 }
