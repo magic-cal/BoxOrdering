@@ -10,7 +10,7 @@ package Order;
  *
  * @author felixmayo
  */
-public class Box {
+public abstract class Box {
     private float size;      // class instance variables
     private int grade;
     private boolean sealableTop;
@@ -50,37 +50,13 @@ public class Box {
 
     //Methods
 
-    public int type() {
-      //calculates the grade type of the Box
-     int boxType = 0;
-
-        if (grade >= 1 && grade <= 3 && colourPrint == 0 && reBottom == false && reCorners == false ) {
-            boxType = 1;
-        }
-
-        else if (grade >= 2 && grade <= 4 && colourPrint == 1 && reBottom == false && reCorners == false ) {
-            boxType = 2;
-        }
-
-        else if (grade >= 2 && grade <= 5 && colourPrint == 2 && reBottom == false && reCorners == false ) {
-            boxType = 3;
-        }
-
-        else if (grade >= 2 && grade <= 5 && colourPrint == 2 && reBottom == true && reCorners == false ) {
-            boxType = 4;
-        }
-
-        else if (grade >= 3 && grade <= 5 && colourPrint == 2 && reBottom == true && reCorners == true ) {
-            boxType = 5;
-        }
-
-     return boxType;
-    }
+    
 
     
     public double getBasicCost(){
       double cost = 0.0;
      double gradeCost = 0;
+        System.out.println("Grade: "+grade);
      switch (grade){
          
          case 1:
