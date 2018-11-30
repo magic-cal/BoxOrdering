@@ -664,10 +664,23 @@ public class BoxUI2 extends javax.swing.JFrame {
 //        JOptionPane.YES_NO_OPTION);
         if (!created) {
             JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add\nCheck Inputs", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+            //if parameter error
+            //parameterError()
+            //if notSupplied
+            //notSupplied
 
         } else {
             JOptionPane.showConfirmDialog(null, "New Boxes added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
 
         }
+    }
+    
+    private void parameterError(){
+        JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add\nCheck Inputs", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+    }
+    
+    private void notSupplied(){
+        //check if just a parameter error
+        JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
 }
