@@ -485,7 +485,7 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void jbtn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_addActionPerformed
         // TODO add your handling code here:
-        boolean created;
+        int outputCode;
         int boxHeight;
         int boxWidth;
         int boxLength;
@@ -512,7 +512,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         }
 
 //        checks if the box has been created
-        created = orderManager.addBox(boxWidth, boxLength, boxHeight,
+        outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
                 cardboardGrade, colourPrint, reBottom, reCorners,
                 sealableTop, quantity);
 
@@ -524,7 +524,7 @@ public class BoxUI2 extends javax.swing.JFrame {
             clearValues();
         }
         updateValues();
-        outputPrompt(created);
+        outputPrompt(outputCode);
 
     }//GEN-LAST:event_jbtn_addActionPerformed
 
@@ -657,28 +657,26 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_quantity;
     // End of variables declaration//GEN-END:variables
 
-    private void outputPrompt(boolean created) {
+    private void outputPrompt(int outputCode) {
 //        JOptionPane.showConfirmDialog(null, 
 //        "Are you sure you want to exit?", "Exit Program",
 //        JOptionPane.YES_NO_OPTION);
-        if (!created) {
-            JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add\nCheck Inputs", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
-            //if parameter error
-            //parameterError()
-            //if notSupplied
-            //notSupplied
-
-        } else {
-            JOptionPane.showConfirmDialog(null, "New Boxes added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
-
+        if (outputCode < 0) {
+            if (outputCode == -1) {
+                notSupplied();
+            } else {
+                parameterError();
+            }
+        } else if (outputCode > 0) {
+            JOptionPane.showConfirmDialog(null, "New Box " + outputCode + " added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
         }
     }
-    
-    private void parameterError(){
+
+    private void parameterError() {
         JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add\nCheck Inputs", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
-    
-    private void notSupplied(){
+
+    private void notSupplied() {
         //check if just a parameter error
         JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }

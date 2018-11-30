@@ -14,31 +14,39 @@ public class OrderManager {
 //        this.addBox();
     }
 //    boxWidth,boxLength,boxHeight,cardboardGrade,colourPrint,reBottom,reCorners,sealableTop,quantity
-    public boolean addBox(float width, float length, float height,int grade,
+    public int addBox(float width, float length, float height,int grade,
             int colourPrint, boolean reBottom, boolean reCorners,
             boolean sealedTop, int quantity){
             float size = getSize(width,length,height);
+            
+//            @TODO Check valid inputs
+//          if(these are invalid){
+//              return -2;
+//          }
+
+
             switch (boxType(grade,colourPrint,reBottom,reCorners)){
 //                @todo ADD OTHER BOX TYPES HERE
                 case 1:
                     System.out.println("box 1");
-                    return true;
+//                    boxes.add(new BoxType1());
+                    return 1;
                 case 2:
                     System.out.println("box 2");
                     boxes.add(new BoxType2(size,grade,sealedTop));
-                    return true;
+                    return 2;
                 case 3:
                     System.out.println("box 3");
-                    return true;
+                    return 3;
                 case 4:
                     System.out.println("box 4");
-                    return true;
+                    return 4;
                 case 5:
                     System.out.println("box 5");
-                    return true;
+                    return 5;
                 default:
                     System.out.println("ERROR BOX SORT DEFAULT");
-                    return false;  
+                    return -1;  
             }
     }
     
