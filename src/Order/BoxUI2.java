@@ -66,7 +66,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         txt_boxWidth = new javax.swing.JTextField();
         txt_boxLength = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        buttonSealableTop = new javax.swing.JRadioButton();
+        rbtn_yes3 = new javax.swing.JRadioButton();
         rbtn_no3 = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -406,11 +406,11 @@ public class BoxUI2 extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(4, 45, 0, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
-        buttonGroup4.add(buttonSealableTop);
-        buttonSealableTop.setText("Yes");
-        buttonSealableTop.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup4.add(rbtn_yes3);
+        rbtn_yes3.setText("Yes");
+        rbtn_yes3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSealableTopActionPerformed(evt);
+                rbtn_yes3ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -420,7 +420,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
-        getContentPane().add(buttonSealableTop, gridBagConstraints);
+        getContentPane().add(rbtn_yes3, gridBagConstraints);
 
         buttonGroup4.add(rbtn_no3);
         rbtn_no3.setText("No");
@@ -491,7 +491,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         int boxLength;
         int cardboardGrade;
         int quantity;
-        boolean sealableTop = buttonSealableTop.isSelected();
+        boolean sealableTop = rbtn_yes3.isSelected();
         int colourPrint = 3;
         boolean reBottom = rbtn_yes1.isSelected();
         boolean reCorners = rbtn_yes2.isSelected();
@@ -545,9 +545,9 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_boxLengthActionPerformed
 
-    private void buttonSealableTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSealableTopActionPerformed
+    private void rbtn_yes3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_yes3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSealableTopActionPerformed
+    }//GEN-LAST:event_rbtn_yes3ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
 
@@ -565,16 +565,15 @@ public class BoxUI2 extends javax.swing.JFrame {
     private void clearValues() {
 //@todo Uncomment this section:
 
-//        txt_boxHeight.setText("");
-//        txt_cardboardGrade.setText("");
-//        txt_quantity.setText("");
-//        rbtn_0.setSelected(false);
-//        rbtn_1.setSelected(false);
-//        rbtn_2.setSelected(false);
-//        rbtn_yes1.setSelected(false);
-//        rbtn_no1.setSelected(false);
-//        rbtn_yes2.setSelected(false);
-//        rbtn_no2.setSelected(false);
+        txt_boxHeight.setText("");
+        txt_boxWidth.setText("");
+        txt_boxLength.setText("");
+        txt_cardboardGrade.setText("");
+        txt_quantity.setText("");
+        buttonGroup1.clearSelection();
+        buttonGroup2.clearSelection();
+        buttonGroup3.clearSelection();
+        buttonGroup4.clearSelection();
     }
 
     private void updateValues() {
@@ -623,7 +622,6 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JRadioButton buttonSealableTop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -650,6 +648,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtn_no3;
     private javax.swing.JRadioButton rbtn_yes1;
     private javax.swing.JRadioButton rbtn_yes2;
+    private javax.swing.JRadioButton rbtn_yes3;
     private javax.swing.JLabel totCost;
     private javax.swing.JTextField txt_boxHeight;
     private javax.swing.JTextField txt_boxLength;
