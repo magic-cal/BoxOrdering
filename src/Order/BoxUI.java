@@ -11,6 +11,7 @@ package Order;
  */
 import Order.BoxUI2;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 public class BoxUI extends javax.swing.JFrame {
 
     /**
@@ -89,6 +90,7 @@ public class BoxUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         BoxUI2 Info = new BoxUI2();
         Info.setVisible(true);
+        Info.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         BoxUI.this.setVisible(false);
         BoxUI.this.dispose();
         
