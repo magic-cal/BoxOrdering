@@ -443,7 +443,11 @@ public class BoxUI2 extends javax.swing.JFrame {
         } else if (rbtn_2.isSelected() == true) {
             colourPrint = 2;
         }
-
+        
+        if (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == false) {
+            System.out.println("The input was invalid");
+        }
+        
 //        checks if the box has been created
         outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
                 cardboardGrade, colourPrint, reBottom, reCorners,
@@ -496,8 +500,6 @@ public class BoxUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void clearValues() {
-//@todo Uncomment this section:
-
         txt_boxHeight.setText("");
         txt_boxWidth.setText("");
         txt_boxLength.setText("");
@@ -614,4 +616,6 @@ public class BoxUI2 extends javax.swing.JFrame {
         //check if just a parameter error
         JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
+
+    
 }

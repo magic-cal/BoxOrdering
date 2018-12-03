@@ -113,6 +113,42 @@ public class OrderManager {
      return boxType;
     }
     
-        
-}
+        public boolean checkInput(String boxHeight, String boxWidth, String boxLength, String quantity){
+            try {
+                Integer.parseInt(boxHeight);
+                Integer.parseInt(boxWidth);
+                Integer.parseInt(boxLength);
+                Integer.parseInt(quantity);
+            }
+            catch(Exception e){
+                System.out.println("exception, not valid integer");
+                return false;
+            }
+            int boxHeight_int = Integer.parseInt(boxHeight);
+                int boxWidth_int = Integer.parseInt(boxWidth);
+                int boxLength_int = Integer.parseInt(boxLength);
+                int quantity_int = Integer.parseInt(quantity);
+  
+            boolean check = true;
+              if (boxHeight_int<0 || boxHeight_int>999) {
+                  check = false;
+              }
+              else if (boxWidth_int<0 || boxWidth_int>999) {
+                  check = false;
+              }
+              else if (boxLength_int<0 || boxLength_int>999) {
+                  check = false;
+              }
+              else if (quantity_int <0 || quantity_int>100) {
+                  check = false;
+              }
+              return check;
+              
+        }
+//        boxHeight
+//        boxWidth
+//        boxLength
+//        cardboardGrade
+//        quantity
+    }
 
