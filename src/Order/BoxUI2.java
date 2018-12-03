@@ -448,16 +448,12 @@ public class BoxUI2 extends javax.swing.JFrame {
             colourPrint = 2;
         }
         
-        if (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == false) {
-            System.out.println("The input was invalid");
-        }
-        
 //        checks if the box has been created
         outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
                 cardboardGrade, colourPrint, reBottom, reCorners,
                 sealableTop, quantity);
 
-        if (colourPrint == 3 && boxHeight > 0 && quantity > 0) {
+        if (colourPrint == 3 && boxHeight > 0 && quantity > 0 && orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == true) {
             // add the box as an object
             System.out.println("test");
 //            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
