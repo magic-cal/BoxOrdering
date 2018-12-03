@@ -148,6 +148,12 @@ public class BoxUI2 extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 54, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
+
+        txt_cardboardGrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_cardboardGradeActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 13;
@@ -169,6 +175,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         getContentPane().add(jLabel4, gridBagConstraints);
 
         buttonGroup1.add(rbtn_0);
+        rbtn_0.setSelected(true);
         rbtn_0.setText("0");
         rbtn_0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,6 +255,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         getContentPane().add(rbtn_yes1, gridBagConstraints);
 
         buttonGroup2.add(rbtn_no1);
+        rbtn_no1.setSelected(true);
         rbtn_no1.setText("No");
         rbtn_no1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,6 +283,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         getContentPane().add(rbtn_yes2, gridBagConstraints);
 
         buttonGroup3.add(rbtn_no2);
+        rbtn_no2.setSelected(true);
         rbtn_no2.setText("No");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
@@ -422,6 +431,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         getContentPane().add(rbtn_yes3, gridBagConstraints);
 
         buttonGroup4.add(rbtn_no3);
+        rbtn_no3.setSelected(true);
         rbtn_no3.setText("No");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
