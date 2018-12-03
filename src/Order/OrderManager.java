@@ -24,10 +24,9 @@ public class OrderManager {
 
 
             switch (boxType(grade,colourPrint,reBottom,reCorners)){
-//                @todo ADD OTHER BOX TYPES HERE
                 case 1:
                     System.out.println("box 1");
-//                    boxes.add(new BoxType1());
+                    boxes.add(new BoxType1(size,grade,sealedTop,quantity));
                     return 1;
                 case 2:
                     System.out.println("box 2");
@@ -35,12 +34,15 @@ public class OrderManager {
                     return 2;
                 case 3:
                     System.out.println("box 3");
+                    boxes.add(new BoxType3(size,grade,sealedTop,quantity));
                     return 3;
                 case 4:
                     System.out.println("box 4");
+                    boxes.add(new BoxType4(size,grade,sealedTop,quantity));
                     return 4;
                 case 5:
                     System.out.println("box 5");
+                    boxes.add(new BoxType5(size,grade,sealedTop,quantity));
                     return 5;
                 default:
                     System.out.println("ERROR BOX SORT DEFAULT");

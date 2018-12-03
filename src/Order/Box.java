@@ -98,7 +98,7 @@ public abstract class Box {
         double basicCost = getBasicCost();
        if(getSealableTop())cost += basicCost*0.10;
         cost += basicCost;
-     return cost;
+     return cost*=quantity;
     }
 
 }
