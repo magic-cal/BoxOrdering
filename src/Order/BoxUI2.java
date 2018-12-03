@@ -454,29 +454,31 @@ public class BoxUI2 extends javax.swing.JFrame {
             colourPrint = 2;
         }
         
+        outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
+        cardboardGrade, colourPrint, reBottom, reCorners,
+        sealableTop, quantity);
 //        checks if the box has been created
 
-        if (colourPrint == 3 && boxHeight > 0 && quantity > 0 && orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == 0) {
+        if (colourPrint == 3 && boxHeight > 0 && quantity > 0 && orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == false) {
             // add the box as an object
-            outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
-            cardboardGrade, colourPrint, reBottom, reCorners,
-            sealableTop, quantity);
 //            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
-        } else {
-             switch (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText())){
-                case 1:
-                    txt_boxHeight.setBackground(Color.red);
-                    break;
-                case 2:
-                    txt_boxWidth.setBackground(Color.red);
-                    break;
-                case 3:
-                    txt_boxLength.setBackground(Color.red);
-                    break;
-                case 4:
-                    txt_quantity.setBackground(Color.red);
-                    break; 
+        } 
+        else {
+            if (orderManager.checkInput2(txt_boxWidth.getText()) == false) {
+                txt_boxWidth.setBackground(Color.red);
             }
+            if (orderManager.checkInput2(txt_boxHeight.getText()) == false) {
+                txt_boxHeight.setBackground(Color.red);
+            }
+            if (orderManager.checkInput2(txt_boxLength.getText()) == false) {
+                txt_boxLength.setBackground(Color.red);
+            }
+            if (orderManager.checkInput2(txt_quantity.getText()) == false) {
+                txt_quantity.setBackground(Color.red);
+                
+            }
+            parameterError();
+ 
         }
         updateValues();
         outputPrompt(outputCode);
@@ -518,25 +520,25 @@ public class BoxUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
-         switch (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText())){
-                case 1:
-                    txt_boxHeight.setBackground(Color.red);
-                    parameterError();
-                    break;
-                case 2:
-                    txt_boxWidth.setBackground(Color.red);
-                    parameterError();
-                    break;
-                case 3:
-                    txt_boxLength.setBackground(Color.red);
-                    parameterError();
-                    break;
-                case 4:
-                    txt_quantity.setBackground(Color.red);
-                    parameterError();
-                    break;           
+//         switch (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText())){
+//                case 1:
+//                    txt_boxHeight.setBackground(Color.red);
+//                    parameterError();
+//                    break;
+//                case 2:
+//                    txt_boxWidth.setBackground(Color.red);
+//                    parameterError();
+//                    break;
+//                case 3:
+//                    txt_boxLength.setBackground(Color.red);
+//                    parameterError();
+//                    break;
+//                case 4:
+//                    txt_quantity.setBackground(Color.red);
+//                    parameterError();
+//                    break;           
     }//GEN-LAST:event_formKeyReleased
-    }
+
     private void clearValues() {
         txt_boxHeight.setText("");
         txt_boxWidth.setText("");

@@ -115,56 +115,56 @@ public class OrderManager {
      return boxType;
     }
     
-        public int checkInput(String boxHeight, String boxWidth, String boxLength, String quantity){
+        public boolean checkInput(String boxHeight, String boxWidth, String boxLength, String quantity){
             try {
                 Integer.parseInt(boxHeight);
-            }
-            catch(Exception e){
-                System.out.println("exception, not valid integer");
-                return 1;
-            }
-             try {
                 Integer.parseInt(boxWidth);
-            }
-            catch(Exception e){
-                System.out.println("exception, not valid integer");
-                return 2;
-            }
-              try {
                 Integer.parseInt(boxLength);
-            }
-            catch(Exception e){
-                System.out.println("exception, not valid integer");
-                return 3;
-            }
-               try {
                 Integer.parseInt(quantity);
             }
             catch(Exception e){
                 System.out.println("exception, not valid integer");
-                return 4;
+                return true;
             }
+
             
             int boxHeight_int = Integer.parseInt(boxHeight);
-                int boxWidth_int = Integer.parseInt(boxWidth);
-                int boxLength_int = Integer.parseInt(boxLength);
-                int quantity_int = Integer.parseInt(quantity);
+            int boxWidth_int = Integer.parseInt(boxWidth);
+            int boxLength_int = Integer.parseInt(boxLength);
+            int quantity_int = Integer.parseInt(quantity);
   
             int check = 0;
               if (boxHeight_int<0 || boxHeight_int>999) {
-                  check = 1;
+                  return true;
               }
               else if (boxWidth_int<0 || boxWidth_int>999) {
-                  check = 2;
+                  return true;
               }
               else if (boxLength_int<0 || boxLength_int>999) {
-                  check = 3;
+                  return true;
               }
               else if (quantity_int <0 || quantity_int>100) {
-                  check = 4;
+                  return true;
               }
-              return check;
+              return false;
               
         }
+    
+public boolean checkInput2(String userInput){
+    try {
+            Integer.parseInt(userInput);
+        }
+    catch(Exception e){
+        System.out.println("exception, not valid integer");
+        return false;
+        }
+    
+    int userInput_int = Integer.parseInt(userInput);
+    
+    if (userInput_int<0 || userInput_int>999) {
+        return false;
     }
+    return true;
+}
+}
 
