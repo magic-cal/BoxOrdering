@@ -116,14 +116,33 @@ public class OrderManager {
         public int checkInput(String boxHeight, String boxWidth, String boxLength, String quantity){
             try {
                 Integer.parseInt(boxHeight);
+            }
+            catch(Exception e){
+                System.out.println("exception, not valid integer");
+                return 1;
+            }
+             try {
                 Integer.parseInt(boxWidth);
+            }
+            catch(Exception e){
+                System.out.println("exception, not valid integer");
+                return 2;
+            }
+              try {
                 Integer.parseInt(boxLength);
+            }
+            catch(Exception e){
+                System.out.println("exception, not valid integer");
+                return 3;
+            }
+               try {
                 Integer.parseInt(quantity);
             }
             catch(Exception e){
                 System.out.println("exception, not valid integer");
-                return 0;
+                return 4;
             }
+            
             int boxHeight_int = Integer.parseInt(boxHeight);
                 int boxWidth_int = Integer.parseInt(boxWidth);
                 int boxLength_int = Integer.parseInt(boxLength);

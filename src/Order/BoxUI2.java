@@ -91,6 +91,11 @@ public class BoxUI2 extends javax.swing.JFrame {
                 formWindowClosing(evt);
             }
         });
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
+            }
+        });
 
         jbtn_completeOrder.setText("Complete Order");
         jbtn_completeOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -308,7 +313,7 @@ public class BoxUI2 extends javax.swing.JFrame {
                                 .addComponent(noBoxes)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(50, 50, 50))
+                .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -513,6 +518,22 @@ public class BoxUI2 extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null, "Please fill each text field:\nBox Width: Please enter a width from 0cm - 999cm \nBox Length: Please enter a length from 0cm - 999cm \nBox Height: Please enter a height from 0cm - 999cm\nCardboard Grade: 1-5\nQuantity: Please enter a quantity integer greater that 0\nWhen all fields are full press add, once all boxs are added press complete", "Box order help!", JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_btn_helpActionPerformed
 
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+         switch (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText())){
+                case 1:
+                    txt_boxHeight.setBackground(Color.red);
+                    break;
+                case 2:
+                    txt_boxWidth.setBackground(Color.red);
+                    break;
+                case 3:
+                    txt_boxLength.setBackground(Color.red);
+                    break;
+                case 4:
+                    txt_quantity.setBackground(Color.red);
+                    break;           
+    }//GEN-LAST:event_formKeyReleased
+    }
     private void clearValues() {
         txt_boxHeight.setText("");
         txt_boxWidth.setText("");
@@ -523,6 +544,11 @@ public class BoxUI2 extends javax.swing.JFrame {
         buttonGroup2.clearSelection();
         buttonGroup3.clearSelection();
         buttonGroup4.clearSelection();
+        txt_boxLength.setBackground(Color.white);
+        txt_boxWidth.setBackground(Color.white);
+        txt_boxHeight.setBackground(Color.white);
+        txt_quantity.setBackground(Color.white);
+         
     }
 
     private void updateValues() {
