@@ -51,10 +51,7 @@ public abstract class Box {
     public boolean getReCorners() {
      return reCorners;
     }
-    
-    public float queryCost(){
-        return cost;
-    }
+
     public boolean getSealableTop(){
         return sealableTop;
     }
