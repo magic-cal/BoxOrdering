@@ -6,8 +6,8 @@ package Order;
 
 public class BoxType4 extends Box {
     private int colourPrint;
-    public BoxType4(float boxSize, int boxGrade, boolean boxSealableTop) {
-        super(boxSize, boxGrade, boxSealableTop);
+    public BoxType4(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
+        super(boxSize, boxGrade, boxSealableTop,boxQuantity);
         
         this.colourPrint = 2;
         

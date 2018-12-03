@@ -8,12 +8,10 @@ import java.text.NumberFormat;
  * @author Callum
  */
 
-public class BoxType2 extends Box {
-        private int colourPrint;
+public class BoxType1 extends Box {
     // Constructor
-    public BoxType2(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
-        super(boxSize,boxGrade,boxSealableTop,boxQuantity);
-        this.colourPrint = 1;
+    public BoxType1(float boxSize, int boxGrade, boolean boxSealableTop) {
+        super(boxSize,boxGrade,boxSealableTop);
     }
     
     

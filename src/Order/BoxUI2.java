@@ -113,6 +113,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         jLabel4.setText("Colour print:");
 
         buttonGroup1.add(rbtn_0);
+        rbtn_0.setSelected(true);
         rbtn_0.setText("0");
         rbtn_0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +145,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         });
 
         buttonGroup2.add(rbtn_no1);
+        rbtn_no1.setSelected(true);
         rbtn_no1.setText("No");
         rbtn_no1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +157,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         rbtn_yes2.setText("Yes");
 
         buttonGroup3.add(rbtn_no2);
+        rbtn_no2.setSelected(true);
         rbtn_no2.setText("No");
 
         jLabel7.setText("Quantity:");
@@ -204,6 +207,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         });
 
         buttonGroup4.add(rbtn_no3);
+        rbtn_no3.setSelected(true);
         rbtn_no3.setText("No");
 
         jLabel13.setText("Extras");
@@ -523,7 +527,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -594,7 +598,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void outputPrompt(int outputCode) {
-//        JOptionPane.showConfirmDialog(null, 
+//        JOptionPane.showConfirmDialog(null,
 //        "Are you sure you want to exit?", "Exit Program",
 //        JOptionPane.YES_NO_OPTION);
         if (outputCode < 0) {
