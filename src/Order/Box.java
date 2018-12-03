@@ -88,7 +88,7 @@ public abstract class Box {
              break;
            }
      cost+= gradeCost*size;
-     cost*=quantity;
+
      return cost;
     }
     
