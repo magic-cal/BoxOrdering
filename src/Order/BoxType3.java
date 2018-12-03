@@ -4,7 +4,7 @@ package Order;
  * @author up827158, up867238
  */
 
-public class BoxType3 extends Box {
+public class BoxType3 extends BoxType2 {
     private int colourPrint;
     public BoxType3(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
         super(boxSize, boxGrade, boxSealableTop, boxQuantity);

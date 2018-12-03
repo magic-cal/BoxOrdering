@@ -10,8 +10,8 @@ import java.text.NumberFormat;
 
 public class BoxType1 extends Box {
     // Constructor
-    public BoxType1(float boxSize, int boxGrade, boolean boxSealableTop) {
-        super(boxSize,boxGrade,boxSealableTop);
+    public BoxType1(float boxSize, int boxGrade, boolean boxSealableTop,int boxQuantity) {
+        super(boxSize,boxGrade,boxSealableTop,boxQuantity);
     }
     
     
