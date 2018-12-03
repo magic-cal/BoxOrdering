@@ -455,13 +455,12 @@ public class BoxUI2 extends javax.swing.JFrame {
         }
         
 //        checks if the box has been created
-        outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
-                cardboardGrade, colourPrint, reBottom, reCorners,
-                sealableTop, quantity);
 
         if (colourPrint == 3 && boxHeight > 0 && quantity > 0 && orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == 0) {
             // add the box as an object
-            System.out.println("test");
+            outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
+            cardboardGrade, colourPrint, reBottom, reCorners,
+            sealableTop, quantity);
 //            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
         } else {
              switch (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText())){
@@ -522,15 +521,19 @@ public class BoxUI2 extends javax.swing.JFrame {
          switch (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText())){
                 case 1:
                     txt_boxHeight.setBackground(Color.red);
+                    parameterError();
                     break;
                 case 2:
                     txt_boxWidth.setBackground(Color.red);
+                    parameterError();
                     break;
                 case 3:
                     txt_boxLength.setBackground(Color.red);
+                    parameterError();
                     break;
                 case 4:
                     txt_quantity.setBackground(Color.red);
+                    parameterError();
                     break;           
     }//GEN-LAST:event_formKeyReleased
     }
