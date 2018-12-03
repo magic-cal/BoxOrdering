@@ -161,7 +161,7 @@ public boolean checkInput2(String userInput){
     
     int userInput_int = Integer.parseInt(userInput);
     
-    if (userInput_int<0 || userInput_int>999) {
+    if (userInput_int<1 || userInput_int>999) {
         return false;
     }
     return true;
