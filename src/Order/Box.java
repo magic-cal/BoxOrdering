@@ -87,8 +87,8 @@ public abstract class Box {
              System.out.println("ERROR IN GRADING COST");
              break;
            }
-     cost+= gradeCost*size;
-     cost*=quantity;
+     cost += gradeCost*size;
+     cost *= quantity;
      return cost;
     }
     
@@ -98,7 +98,7 @@ public abstract class Box {
         double basicCost = getBasicCost();
        if(getSealableTop())cost += basicCost*0.10;
         cost += basicCost;
-     return cost*=quantity;
+     return cost *= quantity;
     }
 
 }
