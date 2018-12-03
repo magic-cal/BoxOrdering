@@ -1,7 +1,7 @@
 package Order;
 /**
  *
- * @author up827158
+ * @author up827158, up867238
  */
 
 public class BoxType3 extends Box {
