@@ -422,6 +422,7 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void jbtn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_addActionPerformed
         // TODO add your handling code here:
+        boolean validCheck = true;
         int outputCode;
         int boxHeight;
         int boxWidth;
@@ -459,16 +460,21 @@ public class BoxUI2 extends javax.swing.JFrame {
             outputCode = -2; // Input Error
             if (orderManager.checkInput2(txt_boxWidth.getText()) == false) {
                 txt_boxWidth.setBackground(Color.red);
-            }else
+                validCheck = false;
+            }
             if (orderManager.checkInput2(txt_boxHeight.getText()) == false) {
                 txt_boxHeight.setBackground(Color.red);
-            }else
+                validCheck = false;
+            }
             if (orderManager.checkInput2(txt_boxLength.getText()) == false) {
                 txt_boxLength.setBackground(Color.red);
-            }else
+                validCheck = false;
+            }
             if (orderManager.checkInput2(txt_quantity.getText()) == false) {
                 txt_quantity.setBackground(Color.red);
-            }else{
+                validCheck = false;
+            }
+            if(validCheck == true){
         outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
         cardboardGrade, colourPrint, reBottom, reCorners,
         sealableTop, quantity);
