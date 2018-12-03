@@ -43,7 +43,6 @@ public class BoxUI2 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txt_boxHeight = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txt_cardboardGrade = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         rbtn_0 = new javax.swing.JRadioButton();
         rbtn_1 = new javax.swing.JRadioButton();
@@ -71,6 +70,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         btn_help = new javax.swing.JButton();
+        cmb_cardboardGrade = new javax.swing.JComboBox<>();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -218,11 +218,6 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         jLabel13.setText("Extras");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         btn_help.setText("Help");
@@ -231,6 +226,8 @@ public class BoxUI2 extends javax.swing.JFrame {
                 btn_helpActionPerformed(evt);
             }
         });
+
+        cmb_cardboardGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -280,26 +277,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                         .addComponent(rbtn_yes2)
                         .addGap(0, 0, 0)
                         .addComponent(rbtn_no2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel3)
-                        .addGap(20, 20, 20)
-                        .addComponent(txt_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(127, 127, 127)
-                        .addComponent(jLabel12)
-                        .addGap(30, 30, 30)
-                        .addComponent(rbtn_yes3)
-                        .addGap(0, 0, 0)
-                        .addComponent(rbtn_no3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel7)
-                        .addGap(20, 20, 20)
-                        .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(261, 261, 261)
-                        .addComponent(btn_clear)
-                        .addGap(6, 6, 6)
-                        .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -312,8 +289,32 @@ public class BoxUI2 extends javax.swing.JFrame {
                                 .addGap(238, 238, 238)
                                 .addComponent(noBoxes)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(44, 44, 44))
+                        .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(cmb_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(20, 20, 20)
+                                .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(261, 261, 261)
+                                .addComponent(btn_clear)
+                                .addGap(6, 6, 6)
+                                .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(jLabel12)
+                                .addGap(30, 30, 30)
+                                .addComponent(rbtn_yes3)
+                                .addGap(0, 0, 0)
+                                .addComponent(rbtn_no3)))))
+                .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,11 +369,10 @@ public class BoxUI2 extends javax.swing.JFrame {
                         .addComponent(rbtn_no2)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(txt_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(cmb_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(jLabel12))
@@ -442,7 +442,8 @@ public class BoxUI2 extends javax.swing.JFrame {
         boxHeight = orderManager.testNo(txt_boxHeight.getText());
         boxWidth = orderManager.testNo(txt_boxWidth.getText());
         boxLength = orderManager.testNo(txt_boxLength.getText());
-        cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
+//        cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
+        cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1 ;
         quantity = orderManager.testNo(txt_quantity.getText());
 
         //colour print
@@ -524,10 +525,11 @@ public class BoxUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyReleased
 
     private void clearValues() {
+//      @todo make sure the radio buttons select no and the combo box selects 1
         txt_boxHeight.setText("");
         txt_boxWidth.setText("");
         txt_boxLength.setText("");
-        txt_cardboardGrade.setText("");
+//        txt_cardboardGrade.setText("");
         txt_quantity.setText("");
         buttonGroup1.clearSelection();
         buttonGroup2.clearSelection();
@@ -587,6 +589,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JComboBox<String> cmb_cardboardGrade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -618,7 +621,6 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_boxHeight;
     private javax.swing.JTextField txt_boxLength;
     private javax.swing.JTextField txt_boxWidth;
-    private javax.swing.JTextField txt_cardboardGrade;
     private javax.swing.JTextField txt_quantity;
     // End of variables declaration//GEN-END:variables
 

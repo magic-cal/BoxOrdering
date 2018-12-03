@@ -22,7 +22,7 @@ public abstract class Box {
     public Box() {
     }
 
-    
+
     // Constructor
     public Box(float boxSize,  int boxGrade, boolean boxSealableTop, int boxQuantity) {
         this.size = boxSize;
@@ -59,15 +59,15 @@ public abstract class Box {
 
     //Methods
 
-    
 
-    
+
+
     public double getBasicCost(){
       double cost = 0.0;
      double gradeCost = 0;
         System.out.println("Grade: "+grade);
      switch (grade){
-         
+
          case 1:
              gradeCost = 0.55;
              break;
@@ -87,18 +87,18 @@ public abstract class Box {
              System.out.println("ERROR IN GRADING COST");
              break;
            }
-     cost+= gradeCost*size;
-
+     cost += gradeCost*size;
+     cost *= quantity;
      return cost;
     }
-    
-    
+
+
     public double getCost() {
         double cost = 0.00;
         double basicCost = getBasicCost();
        if(getSealableTop())cost += basicCost*0.10;
         cost += basicCost;
-     return cost*=quantity;
+     return cost *= quantity;
     }
 
 }
