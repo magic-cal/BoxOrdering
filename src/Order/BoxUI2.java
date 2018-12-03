@@ -5,6 +5,7 @@
  */
 package Order;
 
+import java.awt.Color;
 import static java.lang.Integer.parseInt;
 import javax.swing.JOptionPane;
 
@@ -453,12 +454,25 @@ public class BoxUI2 extends javax.swing.JFrame {
                 cardboardGrade, colourPrint, reBottom, reCorners,
                 sealableTop, quantity);
 
-        if (colourPrint == 3 && boxHeight > 0 && quantity > 0 && orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == true) {
+        if (colourPrint == 3 && boxHeight > 0 && quantity > 0 && orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == 0) {
             // add the box as an object
             System.out.println("test");
 //            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
         } else {
-            clearValues();
+             switch (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText())){
+                case 1:
+                    txt_boxHeight.setBackground(Color.red);
+                    break;
+                case 2:
+                    txt_boxWidth.setBackground(Color.red);
+                    break;
+                case 3:
+                    txt_boxLength.setBackground(Color.red);
+                    break;
+                case 4:
+                    txt_quantity.setBackground(Color.red);
+                    break; 
+            }
         }
         updateValues();
         outputPrompt(outputCode);
