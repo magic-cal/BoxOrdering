@@ -18,7 +18,6 @@ public abstract class Box {
     private boolean reBottom;
     private boolean reCorners;
     private int quantity;
-    private float cost;
 
     public Box() {
     }
@@ -98,7 +97,11 @@ public abstract class Box {
     
     
     public double getCost() {
-     return getBasicCost();
+        double cost = 0.00;
+        double basicCost = getBasicCost();
+       if(getSealableTop())cost += basicCost*0.10;
+        cost += basicCost;
+     return cost;
     }
 
 }
