@@ -532,7 +532,6 @@ public class BoxUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_boxHeightActionPerformed
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
-        // TODO add your handling code here:
         clearValues();
     }//GEN-LAST:event_btn_clearActionPerformed
 
@@ -554,10 +553,7 @@ public class BoxUI2 extends javax.swing.JFrame {
                 "Are you sure you want to exit?", "Exit Program",
                 JOptionPane.YES_NO_OPTION);
         if (confirmed == JOptionPane.YES_OPTION) {
-              dispose();
-        } else {
-            System.out.println("We need to add this not functionality");
-//@TODO: Fix this
+            dispose();
         }
     }//GEN-LAST:event_formWindowClosing
 
@@ -660,22 +656,22 @@ public class BoxUI2 extends javax.swing.JFrame {
 //        JOptionPane.showConfirmDialog(null, 
 //        "Are you sure you want to exit?", "Exit Program",
 //        JOptionPane.YES_NO_OPTION);
-          if(outputCode <0){
-              if(outputCode == -1){
-                  notSupplied();
-              }else{
-                  parameterError();
-              }
-          }else if(outputCode > 0){
-            JOptionPane.showConfirmDialog(null, "New Box "+outputCode+" added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
+        if (outputCode < 0) {
+            if (outputCode == -1) {
+                notSupplied();
+            } else {
+                parameterError();
+            }
+        } else if (outputCode > 0) {
+            JOptionPane.showConfirmDialog(null, "New Box " + outputCode + " added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
         }
     }
-    
-    private void parameterError(){
+
+    private void parameterError() {
         JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add\nCheck Inputs", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
-    
-    private void notSupplied(){
+
+    private void notSupplied() {
         //check if just a parameter error
         JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
