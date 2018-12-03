@@ -17,13 +17,16 @@ public abstract class Box {
     private int colourPrint;
     private boolean reBottom;
     private boolean reCorners;
+    private int quantity;
 
     
     // Constructor
-    public Box(float boxSize,  int boxGrade, boolean boxSealableTop) {
+    public Box(float boxSize,  int boxGrade, boolean boxSealableTop, int boxQuantity) {
         this.size = boxSize;
         this.grade = boxGrade;
         this.sealableTop = boxSealableTop;
+        this.quantity = boxQuantity;
+//        @TODO add quatity to generating pricing
 
     }
     //Accessor Methods

@@ -11,8 +11,8 @@ import java.text.NumberFormat;
 public class BoxType2 extends Box {
         private int colourPrint;
     // Constructor
-    public BoxType2(float boxSize, int boxGrade, boolean boxSealableTop) {
-        super(boxSize,boxGrade,boxSealableTop);
+    public BoxType2(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
+        super(boxSize,boxGrade,boxSealableTop,boxQuantity);
         this.colourPrint = 1;
     }
     

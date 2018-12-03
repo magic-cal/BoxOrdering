@@ -31,7 +31,7 @@ public class OrderManager {
                     return 1;
                 case 2:
                     System.out.println("box 2");
-                    boxes.add(new BoxType2(size,grade,sealedTop));
+                    boxes.add(new BoxType2(size,grade,sealedTop,quantity));
                     return 2;
                 case 3:
                     System.out.println("box 3");
