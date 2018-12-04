@@ -14,19 +14,17 @@ public class BoxType2 extends Box {
     public BoxType2(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
         super(boxSize,boxGrade,boxSealableTop,boxQuantity);
         this.colourPrint = 1;
-        this.sealableTop = getSealableTop();
-        this.reBottom = getReBottom();
-        this.reCorners = getReCorners();
-        this.quantity = getQuantity();
     }
     
     
         @Override
-        public double getCost() {
+    public double getCost() {
+        double cost = super.getCost();
         double basicCost = super.getBasicCost();
-        double extraCost = super.getExtraCost(colourPrint, reBottom, reCorners, sealableTop);
-        double cost = basicCost * (1 + extraCost);
         
+//      Adding for the cost of the Colouring 
+//      12% of the Original cost.
+        cost += basicCost*1.12;
         return cost;
     }
 }
