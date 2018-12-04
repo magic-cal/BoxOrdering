@@ -190,6 +190,11 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         jLabel11.setText("Box Height /mm:");
 
+        txt_boxWidth.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_boxWidthFocusGained(evt);
+            }
+        });
         txt_boxWidth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_boxWidthActionPerformed(evt);
@@ -384,7 +389,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                             .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(0, 41, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -523,6 +527,10 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
     }//GEN-LAST:event_formKeyReleased
+
+    private void txt_boxWidthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxWidthFocusGained
+        this.setBackground(Color.white);
+    }//GEN-LAST:event_txt_boxWidthFocusGained
 
     private void clearValues() {
 //      @todo make sure the radio buttons select no and the combo box selects 1
