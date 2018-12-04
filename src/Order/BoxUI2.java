@@ -475,9 +475,9 @@ public class BoxUI2 extends javax.swing.JFrame {
                 validCheck = false;
             }
             if(validCheck == true){
-        outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
-        cardboardGrade, colourPrint, reBottom, reCorners,
-        sealableTop, quantity);
+                outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
+                cardboardGrade, colourPrint, reBottom, reCorners,
+                sealableTop, quantity);
 //        checks if the box has been created
             }
  
