@@ -8,6 +8,7 @@ package Order;
 import java.awt.Color;
 import static java.lang.Integer.parseInt;
 import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -557,7 +558,8 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void updateValues() {
         noBoxes.setText("Num boxes: " + orderManager.getNumBoxes());
-        totCost.setText("TotalCost: " + orderManager.getAllCosts());
+        DecimalFormat df = new DecimalFormat("0.00")
+        totCost.setText("TotalCost: £" + df.formaT(orderManager.getAllCosts()));
     }
 
     /**
