@@ -19,7 +19,7 @@ public class BoxType5 extends BoxType4 {
         double basicCost = super.getBasicCost();
 //      Adding for the cost of the Colouring, Reinforced Bottom and Reinforced Corners
 //      15% + 13% + 12% added to the Original cost.
-        cost += basicCost*0.12;
+        cost += basicCost*1.12;
 
         return cost;
     }
