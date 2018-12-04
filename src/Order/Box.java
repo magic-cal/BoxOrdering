@@ -24,11 +24,16 @@ public abstract class Box {
 
 
     // Constructor
-    public Box(float boxSize,  int boxGrade, boolean boxSealableTop, int boxQuantity) {
+    public Box(float boxSize, int boxGrade, int boxColourPrint, boolean boxReBottom, boolean boxReCorners, boolean boxSealableTop, int boxQuantity) {
         this.size = boxSize;
         this.grade = boxGrade;
+        this.colourPrint = boxColourPrint;
         this.sealableTop = boxSealableTop;
+        this.reBottom = boxReBottom;
+        this.reCorners = boxReCorners;
         this.quantity = boxQuantity;
+
+    }
 
     }
     //Accessor Methods
@@ -95,12 +100,34 @@ public abstract class Box {
      return cost;
     }
 
+    public double getExtraCost(int colourPrint, boolean reBottom, boolean reCorners, boolean sealableTop){
+        double percentage = 0.00;
+        
+        if (colourPrint == 1){
+            percentage += 0.12;}
+        
+        else if (colourPrint == 2){
+            percentage += 0.15;}
+        else if (colourPrint == 0){
+            percentage +=0;}
+    
+        if (getReBottom()){
+            percentage += 0.13;}
+        
+        if (getReCorners()){
+            percentage += 0.12;}
+        
+        if (getSealableTop()){
+            percentage += 0.1;}
+        
 
+        return percentage;
+    }
     public double getCost() {
         double cost = 0.00;
         double basicCost = getBasicCost();
-       if(getSealableTop())cost += basicCost*0.10;
-        cost += basicCost;
+        double extras = getExtraCost(colourPrint, reBottom, reCorners, sealableTop);
+        cost += basicCost*(extras + 1);
      return cost *= quantity;
     }
 
