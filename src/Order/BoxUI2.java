@@ -505,6 +505,7 @@ public class BoxUI2 extends javax.swing.JFrame {
                 outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
                 cardboardGrade, colourPrint, reBottom, reCorners,
                 sealableTop, quantity);
+                //@TODO adds to table
 //        checks if the box has been created
             }
 
