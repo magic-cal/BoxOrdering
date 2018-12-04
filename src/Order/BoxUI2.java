@@ -72,6 +72,8 @@ public class BoxUI2 extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         btn_help = new javax.swing.JButton();
         cmb_cardboardGrade = new javax.swing.JComboBox<>();
+        btn_edit = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -236,6 +238,20 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         cmb_cardboardGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
+        btn_edit.setText("Edit");
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
+
+        btn_delete.setText("Delete");
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -289,11 +305,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                                         .addGap(2, 2, 2)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(261, 261, 261)
-                                        .addComponent(btn_clear)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(135, 135, 135)
                                         .addComponent(jLabel4)
                                         .addGap(19, 19, 19)
@@ -304,25 +315,33 @@ public class BoxUI2 extends javax.swing.JFrame {
                                         .addComponent(rbtn_2))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(109, 109, 109)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btn_clear)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btn_delete)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btn_edit))
+                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel12)
                                                 .addGap(30, 30, 30)
                                                 .addComponent(rbtn_yes3)
                                                 .addGap(0, 0, 0)
                                                 .addComponent(rbtn_no3))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel6)
                                                 .addGap(25, 25, 25)
                                                 .addComponent(rbtn_yes2)
                                                 .addGap(0, 0, 0)
                                                 .addComponent(rbtn_no2))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel5)
                                                 .addGap(25, 25, 25)
                                                 .addComponent(rbtn_yes1)
                                                 .addGap(0, 0, 0)
-                                                .addComponent(rbtn_no1)))))))))
+                                                .addComponent(rbtn_no1)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
@@ -369,7 +388,9 @@ public class BoxUI2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_clear)
-                            .addComponent(jbtn_add)))
+                            .addComponent(jbtn_add)
+                            .addComponent(btn_edit)
+                            .addComponent(btn_delete)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -534,6 +555,14 @@ public class BoxUI2 extends javax.swing.JFrame {
         this.setBackground(Color.white);
     }//GEN-LAST:event_txt_boxWidthFocusGained
 
+    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_editActionPerformed
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_deleteActionPerformed
+
     private void clearValues() {
 //      @todo make sure the radio buttons select no and the combo box selects 1
         txt_boxHeight.setText("");
@@ -600,6 +629,8 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_clear;
+    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_edit;
     private javax.swing.JButton btn_help;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
