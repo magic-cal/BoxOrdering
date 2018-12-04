@@ -18,7 +18,7 @@ public class BoxType3 extends BoxType2 {
         double basicCost = super.getBasicCost();
 //      Adding for the cost of the Colouring 
 //      (3% plus the 12 from the sub class) of the Original cost.
-        cost += basicCost*0.03;
+        cost += basicCost*1.03;
         return cost;
     }
 }
