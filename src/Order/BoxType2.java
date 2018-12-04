@@ -24,7 +24,7 @@ public class BoxType2 extends Box {
         
 //      Adding for the cost of the Colouring 
 //      12% of the Original cost.
-        cost += basicCost*0.12;
+        cost += basicCost*1.12;
         return cost;
     }
 }
