@@ -449,16 +449,16 @@ public class BoxUI2 extends javax.swing.JFrame {
         } else if (rbtn_2.isSelected() == true) {
             colourPrint = 2;
         }
-        
+
 
 
 //        if (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == false) {
             // add the box as an object
 ////            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
-//        } 
+//        }
 //        else {
             outputCode = -2; // Input Error
-            if (orderManager.checkInput2(txt_boxWidth.getText()) == false) {
+            if (orderManager.checkInput2(txt_boxWidth.getText())==false){
                 txt_boxWidth.setBackground(Color.red);
                 validCheck = false;
             }
@@ -480,7 +480,7 @@ public class BoxUI2 extends javax.swing.JFrame {
                 sealableTop, quantity);
 //        checks if the box has been created
             }
- 
+
 //        }
         updateValues();
         outputPrompt(outputCode);
@@ -544,7 +544,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         txt_boxWidth.setBackground(Color.white);
         txt_boxHeight.setBackground(Color.white);
         txt_quantity.setBackground(Color.white);
-         
+
     }
 
     private void updateValues() {
@@ -630,9 +630,6 @@ public class BoxUI2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void outputPrompt(int outputCode) {
-//        JOptionPane.showConfirmDialog(null,
-//        "Are you sure you want to exit?", "Exit Program",
-//        JOptionPane.YES_NO_OPTION);
         if (outputCode < 0) {
             if (outputCode == -1) {
                 notSupplied();
@@ -645,7 +642,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     }
 
     private void parameterError() {
-        JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add\nCheck Inputs", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add box\nCheck Inputs are valid", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
 
     private void notSupplied() {
@@ -653,5 +650,5 @@ public class BoxUI2 extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
 
-    
+
 }
