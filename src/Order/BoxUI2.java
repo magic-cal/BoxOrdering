@@ -589,8 +589,8 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void updateValues() {
         noBoxes.setText("Num boxes: " + orderManager.getNumBoxes());
-        DecimalFormat df = new DecimalFormat("0.00")
-        totCost.setText("TotalCost: £" + df.formaT(orderManager.getAllCosts()));
+        DecimalFormat df = new DecimalFormat("0.00");
+        totCost.setText("TotalCost: £" + df.format(orderManager.getAllCosts()));
     }
 
     /**
