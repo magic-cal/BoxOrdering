@@ -11,8 +11,8 @@ package Order;
 public class BoxType2 extends Box {
         private int colourPrint;
     // Constructor
-    public BoxType2(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
-        super(boxSize,boxGrade,boxSealableTop,boxQuantity);
+    public BoxType2(float boxSize, int boxGrade, int boxColourPrint, boolean boxReBottom, boolean boxReCorners, boolean boxSealableTop, int boxQuantity) {
+        super(boxSize, boxGrade,boxColourPrint, boxSealableTop, boxReBottom, boxReCorners ,boxQuantity);
         this.colourPrint = 1;
         this.sealableTop = getSealableTop();
         this.reBottom = getReBottom();
