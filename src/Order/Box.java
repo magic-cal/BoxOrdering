@@ -55,6 +55,9 @@ public abstract class Box {
     public boolean getSealableTop(){
         return sealableTop;
     }
+    public int getQuantity(){
+        return quantity;
+    }
 
 
     //Methods

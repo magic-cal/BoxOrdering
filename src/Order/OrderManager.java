@@ -59,6 +59,8 @@ public class OrderManager {
     private float getSize(float width, float length, float height){
         //calculates surface area of the Box
         float size = (2*length*width)+(2*length*height)+(2*height*width);
+//        In Millimeters squared
+        size = (float) (size/1e+6);
         return size;
     }
     
@@ -76,7 +78,11 @@ public class OrderManager {
     }
     
     public int getNumBoxes(){
-        return boxes.size();
+        int boxNo = 0;
+        for(Box box:boxes){
+            boxNo+=box.getQuantity();
+        }
+        return boxNo;
     }
     
     public int testNo(String toTest){
