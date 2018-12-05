@@ -71,7 +71,6 @@ public class BoxUI2 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         btn_help = new javax.swing.JButton();
         cmb_cardboardGrade = new javax.swing.JComboBox<>();
-        btn_edit = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_boxOrders = new javax.swing.JTable();
@@ -255,13 +254,6 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         cmb_cardboardGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
-        btn_edit.setText("Edit");
-        btn_edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editActionPerformed(evt);
-            }
-        });
-
         btn_delete.setText("Delete");
         btn_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,7 +344,7 @@ public class BoxUI2 extends javax.swing.JFrame {
                                         .addGap(0, 0, 0)
                                         .addComponent(rbtn_2))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(109, 109, 109)
+                                        .addGap(177, 177, 177)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel12)
@@ -376,8 +368,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                                                 .addComponent(btn_clear)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(btn_delete)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btn_edit)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -434,7 +424,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_clear)
                             .addComponent(jbtn_add)
-                            .addComponent(btn_edit)
                             .addComponent(btn_delete)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -608,26 +597,17 @@ public class BoxUI2 extends javax.swing.JFrame {
     private void txt_boxWidthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxWidthFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_boxWidthFocusGained
-
-    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_editActionPerformed
-
+    
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
-        //deletes the selected row in the order display table 
+        //deletes the selected row in the order display table
+        // @todo xsneeds to delete box from array
         int row = tbl_boxOrders.getSelectedRow();
         orderManager.removeBox(row);
         DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
         model.removeRow(row);
         updateValues();
 
-        //updates value of deleting a row - working on it
-        //int newAmount = orderManager.getNumBoxes() -1; //doens't work, it only sets it to -1
-        //noBoxes.setText("Num boxes: " + newAmount);
-        //DecimalFormat df = new DecimalFormat("0.00");
-        //int newCost = orderManager.getAllCosts() - orderManager.getCost(row); //need to subtract the cost of current item
-        //totCost.setText("TotalCost: £" + df.format(newCost));
 
     }//GEN-LAST:event_btn_deleteActionPerformed
 
@@ -665,8 +645,8 @@ public class BoxUI2 extends javax.swing.JFrame {
         txt_quantity.setBackground(Color.white);
 
     }
-    
-    
+
+
 
     private void updateValues() {
         noBoxes.setText("Num boxes: " + orderManager.getNumBoxes());
@@ -720,7 +700,6 @@ public class BoxUI2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_delete;
-    private javax.swing.JButton btn_edit;
     private javax.swing.JButton btn_help;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
