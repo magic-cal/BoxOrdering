@@ -9,6 +9,7 @@ import java.awt.Color;
 import static java.lang.Integer.parseInt;
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -39,6 +40,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         buttonGroup4 = new javax.swing.ButtonGroup();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
         jbtn_completeOrder = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -68,12 +70,12 @@ public class BoxUI2 extends javax.swing.JFrame {
         rbtn_yes3 = new javax.swing.JRadioButton();
         rbtn_no3 = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         btn_help = new javax.swing.JButton();
         cmb_cardboardGrade = new javax.swing.JComboBox<>();
         btn_edit = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,6 +89,8 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(jTable1);
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Box Order Form");
@@ -227,8 +231,6 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         jLabel13.setText("Extras");
 
-        jScrollPane1.setViewportView(jList1);
-
         btn_help.setText("Help");
         btn_help.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,25 +254,46 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         });
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Size", "Grade", "Sealable", "Colour", "ReBottom", "ReCorners", "Quantity"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Float.class, java.lang.Integer.class, java.lang.Boolean.class, java.lang.Integer.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
+            jTable2.getColumnModel().getColumn(1).setResizable(false);
+            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(3).setResizable(false);
+            jTable2.getColumnModel().getColumn(4).setResizable(false);
+            jTable2.getColumnModel().getColumn(5).setResizable(false);
+            jTable2.getColumnModel().getColumn(6).setResizable(false);
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(356, 356, 356)
-                                .addComponent(totCost))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(238, 238, 238)
-                                .addComponent(noBoxes)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,12 +340,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                                         .addGap(109, 109, 109)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btn_clear)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btn_delete)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btn_edit))
-                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel12)
                                                 .addGap(30, 30, 30)
                                                 .addComponent(rbtn_yes3)
@@ -339,10 +356,23 @@ public class BoxUI2 extends javax.swing.JFrame {
                                                 .addGap(25, 25, 25)
                                                 .addComponent(rbtn_yes1)
                                                 .addGap(0, 0, 0)
-                                                .addComponent(rbtn_no1)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addGap(46, 46, 46))
+                                                .addComponent(rbtn_no1))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btn_clear)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btn_delete)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btn_edit)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(noBoxes)
+                        .addGap(84, 84, 84)
+                        .addComponent(totCost)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,17 +441,15 @@ public class BoxUI2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addGap(0, 41, Short.MAX_VALUE)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(totCost)
-                            .addComponent(jbtn_completeOrder)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(noBoxes))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(totCost)
+                    .addComponent(jbtn_completeOrder)
+                    .addComponent(noBoxes))
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -458,14 +486,14 @@ public class BoxUI2 extends javax.swing.JFrame {
         int quantity;
         boolean sealableTop = rbtn_yes3.isSelected();
         int colourPrint = 3;
-        boolean reBottom = rbtn_yes1.isSelected();
-        boolean reCorners = rbtn_yes2.isSelected();
+        boolean reBottom = rbtn_yes1.isSelected(); //considered always false
+        boolean reCorners = rbtn_yes2.isSelected(); //considered always false
 
         boxHeight = orderManager.testNo(txt_boxHeight.getText());
         boxWidth = orderManager.testNo(txt_boxWidth.getText());
         boxLength = orderManager.testNo(txt_boxLength.getText());
 //        cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
-        cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1 ;
+        cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1;
         quantity = orderManager.testNo(txt_quantity.getText());
 
         //colour print
@@ -477,40 +505,44 @@ public class BoxUI2 extends javax.swing.JFrame {
             colourPrint = 2;
         }
 
-
-
 //        if (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == false) {
-            // add the box as an object
+        // add the box as an object
 ////            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
 //        }
 //        else {
-            outputCode = -2; // Input Error
-            if (orderManager.checkInput2(txt_boxWidth.getText())==false){
-                txt_boxWidth.setBackground(Color.red);
-                validCheck = false;
-            }
-            if (orderManager.checkInput2(txt_boxHeight.getText()) == false) {
-                txt_boxHeight.setBackground(Color.red);
-                validCheck = false;
-            }
-            if (orderManager.checkInput2(txt_boxLength.getText()) == false) {
-                txt_boxLength.setBackground(Color.red);
-                validCheck = false;
-            }
-            if (orderManager.checkInput2(txt_quantity.getText()) == false) {
-                txt_quantity.setBackground(Color.red);
-                validCheck = false;
-            }
-            if(validCheck == true){
-                outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
-                cardboardGrade, colourPrint, reBottom, reCorners,
-                sealableTop, quantity);
-                //@TODO adds to table
+        outputCode = -2; // Input Error
+        if (orderManager.checkInput2(txt_boxWidth.getText()) == false) {
+            txt_boxWidth.setBackground(Color.red);
+            validCheck = false;
+        }
+        if (orderManager.checkInput2(txt_boxHeight.getText()) == false) {
+            txt_boxHeight.setBackground(Color.red);
+            validCheck = false;
+        }
+        if (orderManager.checkInput2(txt_boxLength.getText()) == false) {
+            txt_boxLength.setBackground(Color.red);
+            validCheck = false;
+        }
+        if (orderManager.checkInput2(txt_quantity.getText()) == false) {
+            txt_quantity.setBackground(Color.red);
+            validCheck = false;
+        }
+        if (validCheck == true) {
+            outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
+                    cardboardGrade, colourPrint, reBottom, reCorners,
+                    sealableTop, quantity);
+            //@TODO adds to table
+            //adds the content (that was just checked and sent to the addBox method) to the content table in the ui
+            Box box = orderManager.getLatestBox();
+            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+            model.addRow(new Object[]{box.getSize(), box.getGrade(), box.getSealableTop(), box.getColourPrint(), box.getReBottom(), box.getReCorners(), box.getQuantity()});
+
 //        checks if the box has been created
-            }
+        }
 
 //        }
         updateValues();
+
         outputPrompt(outputCode);
 
     }//GEN-LAST:event_jbtn_addActionPerformed
@@ -546,7 +578,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
-        JOptionPane.showConfirmDialog(null, "Please fill each text field:\nBox Width: Please enter a width from 0cm - 999cm \nBox Length: Please enter a length from 0mm - 999mm \nBox Height: Please enter a height from 0mm - 999mm\nCardboard Grade: 1-5\nQuantity: Please enter a quantity integer greater that 0\nWhen all fields are full press add, once all boxs are added press complete", "Box order help!", JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog(null, "Please fill each text field:\nBox Width: Please enter a width from 0cm - 999cm \nBox Length: Please enter a length from 0cm - 999cm \nBox Height: Please enter a height from 0cm - 999cm\nCardboard Grade: 1-5\nQuantity: Please enter a quantity integer greater that 0\nWhen all fields are full press add, once all boxs are added press complete", "Box order help!", JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
@@ -562,6 +594,20 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
+        //deletes the selected row in the order display table 
+        int row = jTable2.getSelectedRow();
+        orderManager.removeBox(row); 
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        model.removeRow(row);
+        
+        //updates value of deleting a row - working on it
+        //int newAmount = orderManager.getNumBoxes() -1; //doens't work, it only sets it to -1
+        //noBoxes.setText("Num boxes: " + newAmount);
+        //DecimalFormat df = new DecimalFormat("0.00");
+        //int newCost = orderManager.getAllCosts() - orderManager.getCost(row); //need to subtract the cost of current item
+        //totCost.setText("TotalCost: £" + df.format(newCost));
+        
+        
     }//GEN-LAST:event_btn_deleteActionPerformed
 
     private void clearValues() {
@@ -607,16 +653,24 @@ public class BoxUI2 extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BoxUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BoxUI2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BoxUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BoxUI2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BoxUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BoxUI2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BoxUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BoxUI2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -649,10 +703,11 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtn_add;
     private javax.swing.JButton jbtn_completeOrder;
     private javax.swing.JLabel noBoxes;
@@ -692,6 +747,5 @@ public class BoxUI2 extends javax.swing.JFrame {
         //check if just a parameter error
         JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
-
 
 }
