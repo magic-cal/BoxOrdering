@@ -75,7 +75,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         btn_edit = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tbl_boxOrders = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -254,7 +254,7 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_boxOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -277,15 +277,15 @@ public class BoxUI2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
-            jTable2.getColumnModel().getColumn(2).setResizable(false);
-            jTable2.getColumnModel().getColumn(3).setResizable(false);
-            jTable2.getColumnModel().getColumn(4).setResizable(false);
-            jTable2.getColumnModel().getColumn(5).setResizable(false);
-            jTable2.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane1.setViewportView(tbl_boxOrders);
+        if (tbl_boxOrders.getColumnModel().getColumnCount() > 0) {
+            tbl_boxOrders.getColumnModel().getColumn(0).setResizable(false);
+            tbl_boxOrders.getColumnModel().getColumn(1).setResizable(false);
+            tbl_boxOrders.getColumnModel().getColumn(2).setResizable(false);
+            tbl_boxOrders.getColumnModel().getColumn(3).setResizable(false);
+            tbl_boxOrders.getColumnModel().getColumn(4).setResizable(false);
+            tbl_boxOrders.getColumnModel().getColumn(5).setResizable(false);
+            tbl_boxOrders.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -442,7 +442,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                             .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -534,9 +533,9 @@ public class BoxUI2 extends javax.swing.JFrame {
             //@TODO adds to table
             //adds the content (that was just checked and sent to the addBox method) to the content table in the ui
             Box box = orderManager.getLatestBox();
-            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+            DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
             model.addRow(new Object[]{box.getSize(), box.getGrade(), box.getSealableTop(), box.getColourPrint(), box.getReBottom(), box.getReCorners(), box.getQuantity()});
-
+            clearValues();
 //        checks if the box has been created
         }
 
@@ -595,9 +594,9 @@ public class BoxUI2 extends javax.swing.JFrame {
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
         //deletes the selected row in the order display table 
-        int row = jTable2.getSelectedRow();
+        int row = tbl_boxOrders.getSelectedRow();
         orderManager.removeBox(row); 
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
         model.removeRow(row);
         
         //updates value of deleting a row - working on it
@@ -706,7 +705,6 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtn_add;
     private javax.swing.JButton jbtn_completeOrder;
@@ -720,6 +718,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtn_yes1;
     private javax.swing.JRadioButton rbtn_yes2;
     private javax.swing.JRadioButton rbtn_yes3;
+    private javax.swing.JTable tbl_boxOrders;
     private javax.swing.JLabel totCost;
     private javax.swing.JTextField txt_boxHeight;
     private javax.swing.JTextField txt_boxLength;

@@ -5,9 +5,14 @@
         <group>
             <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/BoxType1.java</file>
             <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/BoxType5.java</file>
+            <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/BoxUI.java</file>
+            <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/BoxType2.java</file>
+            <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/BoxType3.java</file>
             <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/Box.java</file>
             <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/BoxUI2.java</file>
+            <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/boxOrder.java</file>
             <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/OrderManager.java</file>
+            <file>file:/Users/felixmayo/Documents/GitHub/BoxOrdering/src/Order/BoxType4.java</file>
         </group>
     </open-files>
 </project-private>
