@@ -283,7 +283,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Box Width /mm:"/>
+        <Property name="text" type="java.lang.String" value="Box Width /m:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_boxHeight">
@@ -411,22 +411,22 @@
     </Component>
     <Component class="javax.swing.JLabel" name="noBoxes">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel8"/>
+        <Property name="text" type="java.lang.String" value="Quantity"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="totCost">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel9"/>
+        <Property name="text" type="java.lang.String" value="Cost"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Box Length /mm:"/>
+        <Property name="text" type="java.lang.String" value="Box Length /m:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Box Height /mm:"/>
+        <Property name="text" type="java.lang.String" value="Box Height /m:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_boxWidth">
