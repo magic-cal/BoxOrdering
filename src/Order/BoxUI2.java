@@ -116,6 +116,11 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         jLabel2.setText("Box Width /mm:");
 
+        txt_boxHeight.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_boxHeightFocusGained(evt);
+            }
+        });
         txt_boxHeight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_boxHeightActionPerformed(evt);
@@ -176,6 +181,12 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         jLabel7.setText("Quantity:");
 
+        txt_quantity.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_quantityFocusGained(evt);
+            }
+        });
+
         jbtn_add.setText("Add");
         jbtn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,6 +220,11 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         });
 
+        txt_boxLength.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_boxLengthFocusGained(evt);
+            }
+        });
         txt_boxLength.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_boxLengthActionPerformed(evt);
@@ -532,14 +548,17 @@ public class BoxUI2 extends javax.swing.JFrame {
                     sealableTop, quantity);
             //@TODO adds to table
             //adds the content (that was just checked and sent to the addBox method) to the content table in the ui
-            Box box = orderManager.getLatestBox();
-            DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
-            model.addRow(new Object[]{box.getSize(), box.getGrade(), box.getSealableTop(), box.getColourPrint(), box.getReBottom(), box.getReCorners(), box.getQuantity()});
-            clearValues();
+
+            if (outputCode > 0) {
+                Box box = orderManager.getLatestBox();
+                DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
+                model.addRow(new Object[]{box.getSize(), box.getGrade(), box.getSealableTop(), box.getColourPrint(), box.getReBottom(), box.getReCorners(), box.getQuantity()});
+                clearValues();
+            }
+
 //        checks if the box has been created
         }
 
-//        }
         updateValues();
 
         outputPrompt(outputCode);
@@ -584,7 +603,7 @@ public class BoxUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyReleased
 
     private void txt_boxWidthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxWidthFocusGained
-        this.setBackground(Color.white);
+        resetError(evt);
     }//GEN-LAST:event_txt_boxWidthFocusGained
 
     private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
@@ -595,19 +614,31 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         //deletes the selected row in the order display table 
         int row = tbl_boxOrders.getSelectedRow();
-        orderManager.removeBox(row); 
+        orderManager.removeBox(row);
         DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
         model.removeRow(row);
-        
+        updateValues();
+
         //updates value of deleting a row - working on it
         //int newAmount = orderManager.getNumBoxes() -1; //doens't work, it only sets it to -1
         //noBoxes.setText("Num boxes: " + newAmount);
         //DecimalFormat df = new DecimalFormat("0.00");
         //int newCost = orderManager.getAllCosts() - orderManager.getCost(row); //need to subtract the cost of current item
         //totCost.setText("TotalCost: £" + df.format(newCost));
-        
-        
+
     }//GEN-LAST:event_btn_deleteActionPerformed
+
+    private void txt_boxLengthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxLengthFocusGained
+        resetError(evt);
+    }//GEN-LAST:event_txt_boxLengthFocusGained
+
+    private void txt_boxHeightFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxHeightFocusGained
+       resetError(evt);
+    }//GEN-LAST:event_txt_boxHeightFocusGained
+
+    private void txt_quantityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_quantityFocusGained
+        resetError(evt);
+    }//GEN-LAST:event_txt_quantityFocusGained
 
     private void clearValues() {
 //      @todo make sure the radio buttons select no and the combo box selects 1
@@ -631,6 +662,8 @@ public class BoxUI2 extends javax.swing.JFrame {
         txt_quantity.setBackground(Color.white);
 
     }
+    
+    
 
     private void updateValues() {
         noBoxes.setText("Num boxes: " + orderManager.getNumBoxes());
@@ -747,4 +780,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
 
+   private void resetError(java.awt.event.FocusEvent evt){
+       evt.getComponent().setBackground(Color.white);
+   }
 }

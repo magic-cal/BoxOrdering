@@ -288,6 +288,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_boxHeight">
       <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_boxHeightFocusGained"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_boxHeightActionPerformed"/>
       </Events>
     </Component>
@@ -388,6 +389,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_quantity">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_quantityFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbtn_add">
       <Properties>
@@ -433,6 +437,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_boxLength">
       <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_boxLengthFocusGained"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_boxLengthActionPerformed"/>
       </Events>
     </Component>
