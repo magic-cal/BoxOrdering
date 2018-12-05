@@ -59,8 +59,8 @@ public class OrderManager {
     private float getSize(float width, float length, float height) {
         //calculates surface area of the Box
         float size = (2 * length * width) + (2 * length * height) + (2 * height * width);
-//        In Millimeters squared
-        size = (float) (size / 1e+6);
+//        In Meters squared
+        size = (float) (size);
         return size;
     }
 
@@ -90,7 +90,17 @@ public class OrderManager {
         try {
             newNo = Integer.parseInt(toTest);
         } catch (Exception e) {
-            System.out.println("ERROR");
+            System.out.println("Integer Error");
+        }
+        return newNo;
+    }
+    
+    public float testFloat(String toTest) {
+        float newNo = -1;
+        try {
+            newNo = Float.parseFloat(toTest);
+        } catch (Exception e) {
+            System.out.println("Float Error");
         }
         return newNo;
     }
@@ -115,27 +125,26 @@ public class OrderManager {
     }
 
     public boolean checkInput(String boxHeight, String boxWidth, String boxLength, String quantity) {
+        float boxHeight_float;
+        float boxWidth_float;
+        float boxLength_float;
+        float quantity_int;
         try {
-            Integer.parseInt(boxHeight);
-            Integer.parseInt(boxWidth);
-            Integer.parseInt(boxLength);
-            Integer.parseInt(quantity);
+            boxHeight_float = Float.parseFloat(boxHeight);
+            boxWidth_float = Float.parseFloat(boxWidth);
+            boxLength_float = Float.parseFloat(boxLength);
+            quantity_int = Integer.parseInt(quantity);
         } catch (Exception e) {
             System.out.println("exception, not valid integer");
             return true;
         }
 
-        int boxHeight_int = Integer.parseInt(boxHeight);
-        int boxWidth_int = Integer.parseInt(boxWidth);
-        int boxLength_int = Integer.parseInt(boxLength);
-        int quantity_int = Integer.parseInt(quantity);
-
         int check = 0;
-        if (boxHeight_int < 0 || boxHeight_int > 999) {
+        if (boxHeight_float < 0 || boxHeight_float > 999.99) {
             return true;
-        } else if (boxWidth_int < 0 || boxWidth_int > 999) {
+        } else if (boxWidth_float < 0 || boxWidth_float > 999.99) {
             return true;
-        } else if (boxLength_int < 0 || boxLength_int > 999) {
+        } else if (boxLength_float < 0 || boxLength_float > 999.99) {
             return true;
         } else if (quantity_int < 0 || quantity_int > 100) {
             return true;
@@ -144,7 +153,7 @@ public class OrderManager {
 
     }
 
-    public boolean checkInput2(String userInput) {
+    public boolean checkInputInt(String userInput) {
         try {
             Integer.parseInt(userInput);
         } catch (Exception e) {
@@ -155,6 +164,22 @@ public class OrderManager {
         int userInput_int = Integer.parseInt(userInput);
 
         if (userInput_int < 1 || userInput_int > 999) {
+            return false;
+        }
+        return true;
+    }
+    
+     public boolean checkInputFloat(String userInput) {
+         float userInput_int;
+        try {
+            userInput_int =Float.parseFloat(userInput);
+        } catch (Exception e) {
+            System.out.println("exception, not valid integer");
+            return false;
+        }
+
+         
+        if (userInput_int < 0 || userInput_int > 999) {
             return false;
         }
         return true;

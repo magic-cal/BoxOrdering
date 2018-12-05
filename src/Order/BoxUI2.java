@@ -6,7 +6,6 @@
 package Order;
 
 import java.awt.Color;
-import static java.lang.Integer.parseInt;
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 import javax.swing.table.DefaultTableModel;
@@ -113,7 +112,7 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         jLabel1.setText("Box Order Form");
 
-        jLabel2.setText("Box Width /mm:");
+        jLabel2.setText("Box Width /m:");
 
         txt_boxHeight.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -200,13 +199,13 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         });
 
-        noBoxes.setText("jLabel8");
+        noBoxes.setText("Quantity");
 
-        totCost.setText("jLabel9");
+        totCost.setText("Cost");
 
-        jLabel10.setText("Box Length /mm:");
+        jLabel10.setText("Box Length /m:");
 
-        jLabel11.setText("Box Height /mm:");
+        jLabel11.setText("Box Height /m:");
 
         txt_boxWidth.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -483,9 +482,9 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         boolean validCheck = true;
         int outputCode;
-        int boxHeight;
-        int boxWidth;
-        int boxLength;
+        float boxHeight;
+        float boxWidth;
+        float boxLength;
         int cardboardGrade;
         int quantity;
         boolean sealableTop = rbtn_yes3.isSelected();
@@ -493,12 +492,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         boolean reBottom = rbtn_yes1.isSelected(); //considered always false
         boolean reCorners = rbtn_yes2.isSelected(); //considered always false
 
-        boxHeight = orderManager.testNo(txt_boxHeight.getText());
-        boxWidth = orderManager.testNo(txt_boxWidth.getText());
-        boxLength = orderManager.testNo(txt_boxLength.getText());
-//        cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
-        cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1;
-        quantity = orderManager.testNo(txt_quantity.getText());
+
 
         //colour print
         if (rbtn_0.isSelected() == true) {
@@ -515,23 +509,32 @@ public class BoxUI2 extends javax.swing.JFrame {
 //        }
 //        else {
         outputCode = -2; // Input Error
-        if (orderManager.checkInput2(txt_boxWidth.getText()) == false) {
+        if (orderManager.checkInputFloat(txt_boxWidth.getText()) == false) {
             txt_boxWidth.setBackground(Color.red);
             validCheck = false;
         }
-        if (orderManager.checkInput2(txt_boxHeight.getText()) == false) {
+        if (orderManager.checkInputFloat(txt_boxHeight.getText()) == false) {
             txt_boxHeight.setBackground(Color.red);
             validCheck = false;
         }
-        if (orderManager.checkInput2(txt_boxLength.getText()) == false) {
+        if (orderManager.checkInputFloat(txt_boxLength.getText()) == false) {
             txt_boxLength.setBackground(Color.red);
             validCheck = false;
         }
-        if (orderManager.checkInput2(txt_quantity.getText()) == false) {
+        if (orderManager.checkInputInt(txt_quantity.getText()) == false) {
             txt_quantity.setBackground(Color.red);
             validCheck = false;
         }
+        
         if (validCheck == true) {
+        boxHeight = orderManager.testFloat(txt_boxHeight.getText());
+        boxWidth = orderManager.testFloat(txt_boxWidth.getText());
+        boxLength = orderManager.testFloat(txt_boxLength.getText());
+//        cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
+        cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1;
+        quantity = orderManager.testNo(txt_quantity.getText());
+            
+            
             outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
                     cardboardGrade, colourPrint, reBottom, reCorners,
                     sealableTop, quantity);
