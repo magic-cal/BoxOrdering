@@ -535,7 +535,7 @@ public class BoxUI2 extends javax.swing.JFrame {
             Box box = orderManager.getLatestBox();
             DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
             model.addRow(new Object[]{box.getSize(), box.getGrade(), box.getSealableTop(), box.getColourPrint(), box.getReBottom(), box.getReCorners(), box.getQuantity()});
-
+            clearValues();
 //        checks if the box has been created
         }
 
