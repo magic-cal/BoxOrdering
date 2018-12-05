@@ -12,6 +12,7 @@ package Order;
 import Order.BoxUI2;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
+
 public class BoxUI extends javax.swing.JFrame {
 
     /**
@@ -82,7 +83,7 @@ public class BoxUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ExitActionPerformed
-      BoxUI.this.setVisible(false);
+        BoxUI.this.setVisible(false);
         BoxUI.this.dispose();
     }//GEN-LAST:event_jbtn_ExitActionPerformed
 
@@ -93,7 +94,7 @@ public class BoxUI extends javax.swing.JFrame {
         Info.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         BoxUI.this.setVisible(false);
         BoxUI.this.dispose();
-        
+
     }//GEN-LAST:event_jbtn_ContinueActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

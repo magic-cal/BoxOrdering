@@ -56,7 +56,6 @@ public class OrderManager {
         boxes.remove(boxIndex);
     }
 
-   
     private float getSize(float width, float length, float height) {
         //calculates surface area of the Box
         float size = (2 * length * width) + (2 * length * height) + (2 * height * width);
