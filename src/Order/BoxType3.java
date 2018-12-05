@@ -14,7 +14,7 @@ public class BoxType3 extends BoxType2 {
 
     @Override
     public double getCost() {
-        double cost = 0.00;
+        double cost = super.getCost();
         double basicCost = super.getBasicCost();
 //      Adding for the cost of the Colouring 
 //      (3% plus the 12 from the sub class) of the Original cost.

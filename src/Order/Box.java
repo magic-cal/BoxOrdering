@@ -80,7 +80,7 @@ public abstract class Box {
                 gradeCost = 0.98;
                 break;
             case 5:
-                gradeCost = 1.5;
+                gradeCost = 1.50;
                 break;
             default:
                 System.out.println("ERROR IN GRADING COST");

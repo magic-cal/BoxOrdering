@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class OrderManager {
 
-    ArrayList<Box> boxes = new ArrayList<Box>();
+    ArrayList<Box> boxes = new ArrayList();
 
     public OrderManager() {
 //        this.addBox();
@@ -94,7 +94,7 @@ public class OrderManager {
         }
         return newNo;
     }
-    
+
     public float testFloat(String toTest) {
         float newNo = -1;
         try {
@@ -168,17 +168,16 @@ public class OrderManager {
         }
         return true;
     }
-    
-     public boolean checkInputFloat(String userInput) {
-         float userInput_int;
+
+    public boolean checkInputFloat(String userInput) {
+        float userInput_int;
         try {
-            userInput_int =Float.parseFloat(userInput);
+            userInput_int = Float.parseFloat(userInput);
         } catch (Exception e) {
             System.out.println("exception, not valid integer");
             return false;
         }
 
-         
         if (userInput_int < 0 || userInput_int > 999) {
             return false;
         }
