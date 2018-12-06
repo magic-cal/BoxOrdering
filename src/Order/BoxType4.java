@@ -30,7 +30,6 @@ public class BoxType4 extends BoxType3 {
         double cost = super.getCost();
         double basicCost = super.getBasicCost();
 //      Adding for the cost of the Colouring and Reinforced Bottom 
-//      15% + 13% added to the Original cost.
         cost += basicCost * 0.13;
         return cost;
     }

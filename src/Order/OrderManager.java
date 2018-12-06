@@ -229,7 +229,7 @@ public class OrderManager {
      *
      * @param userInput
      * @return if User input is valid return true, else false
-     * Validates user Input if int.
+     * Validates user Input if int.@
      */
     public boolean checkInputInt(String userInput) {
         try {

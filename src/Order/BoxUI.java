@@ -34,6 +34,7 @@ public class BoxUI extends javax.swing.JFrame {
         jbtn_Continue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Welcome Flexbox");
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jbtn_Exit.setText("Exit");
