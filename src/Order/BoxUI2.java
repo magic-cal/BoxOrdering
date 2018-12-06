@@ -609,9 +609,9 @@ public class BoxUI2 extends javax.swing.JFrame {
      */
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
         JOptionPane.showConfirmDialog(null, "Please fill each text field:\n"
-                + "Box Width: Please enter a width from 0cm - 999cm \n"
-                + "Box Length: Please enter a length from 0cm - 999cm \n"
-                + "Box Height: Please enter a height from 0cm - 999cm\n"
+                + "Box Width: Please enter a width from 0m - 999m \n"
+                + "Box Length: Please enter a length from 0m - 999m \n"
+                + "Box Height: Please enter a height from 0m - 999m\n"
                 + "Cardboard Grade: 1-5\n"
                 + "Quantity: Please enter a quantity integer greater that 0\n"
                 + "When all fields are full press add\n"
