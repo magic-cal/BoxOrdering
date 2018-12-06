@@ -143,7 +143,7 @@ public abstract class Box {
             cost += basicCost * 0.10;
         }
         cost += basicCost;
-        return cost *= quantity;
+        return cost;
     }
 
 }
