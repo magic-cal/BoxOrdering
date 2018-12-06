@@ -30,8 +30,8 @@ public class OrderManager {
      * @param sealedTop
      * @param quantity
      * @return the output code (which box has been created or Not)
-     * 
-     * Adds a box to the ArrayList of Boxes if the box can be provided by 
+     *
+     * Adds a box to the ArrayList of Boxes if the box can be provided by
      * flexbox.
      */
     public int addBox(float width, float length, float height, int grade,
@@ -68,8 +68,8 @@ public class OrderManager {
 
     /**
      *
-     * @param boxIndex which position to remove. 
-     * Removes a box from a specified index. 
+     * @param boxIndex which position to remove.
+     * Removes a box from a specified index.
      */
     public void removeBox(int boxIndex) {
         boxes.remove(boxIndex);
@@ -80,8 +80,8 @@ public class OrderManager {
      * @param width
      * @param length
      * @param height
-     * @return Calculates the size of a box based on length, width and height. 
-     * Calculates the size of a box based on length, width and height. 
+     * @return Calculates the size of a box based on length, width and height.
+     * Calculates the size of a box based on length, width and height.
      */
     private float getSize(float width, float length, float height) {
         //calculates surface area of the Box
@@ -93,8 +93,8 @@ public class OrderManager {
 
     /**
      *
-     * @return ArrayList of boxes 
-     * Gives the list of All Boxes 
+     * @return ArrayList of boxes
+     * Gives the list of All Boxes
      */
     public ArrayList<Box> getBoxes() {
         return boxes;
@@ -103,7 +103,7 @@ public class OrderManager {
     /**
      *
      * @return sum of all box costs.
-     * Calculates the sum of all boxes. 
+     * Calculates the sum of all boxes.
      */
     public double getAllCosts() {
 
@@ -118,7 +118,7 @@ public class OrderManager {
      *
      * @return total number of boxes
      * calculates total number of boxes.
-     * 
+     *
      */
     public int getNumBoxes() {
         int boxNo = 0;
@@ -130,7 +130,7 @@ public class OrderManager {
 
     /**
      *
-     * @param toTest the string to test. 
+     * @param toTest the string to test.
      * @return if the string was valid as an integer.
      */
     public int testInt(String toTest) {
@@ -144,7 +144,7 @@ public class OrderManager {
     }
     /**
      *
-     * @param toTest the string to test. 
+     * @param toTest the string to test.
      * @return if the string was valid as an float.
      */
     public float testFloat(String toTest) {
@@ -159,13 +159,13 @@ public class OrderManager {
 
     /**
      *
-     * @param grade 
+     * @param grade
      * @param colourPrint
      * @param reBottom
      * @param reCorners
-     * @return the type of the box that can be created or -1 if not. 
-     * Selects the correct type of box based on inputs. -1 if cannot be created 
-     * 
+     * @return the type of the box that can be created or -1 if not.
+     * Selects the correct type of box based on inputs. -1 if cannot be created
+     *
      */
     public int boxType(int grade, int colourPrint, boolean reBottom, boolean reCorners) {
         //calculates the grade type of the Box
@@ -192,45 +192,10 @@ public class OrderManager {
      * @param boxWidth
      * @param boxLength
      * @param quantity
-     * @return if all data is valid, return true. 
-     * Checks if passed inputs are valid. 
+     * @return if all data is valid, return true.
+     * Checks if passed inputs are valid.
      */
-    public boolean checkInput(String boxHeight, String boxWidth, String boxLength, String quantity) {
-        float boxHeight_float;
-        float boxWidth_float;
-        float boxLength_float;
-        float quantity_int;
-        try {
-            boxHeight_float = Float.parseFloat(boxHeight);
-            boxWidth_float = Float.parseFloat
-        (boxWidth);
-            boxLength_float = Float.parseFloat(boxLength);
-            quantity_int = Integer.parseInt(quantity);
-        } catch (NumberFormatException e) {
-            System.out.println("exception, not valid integer");
-            return true;
-        }
 
-        int check = 0;
-        if (boxHeight_float < 0 || boxHeight_float > 5.0) {
-            return true;
-        } else if (boxWidth_float < 0 || boxWidth_float > 5.0) {
-            return true;
-        } else if (boxLength_float < 0 || boxLength_float > 5.0) {
-            return true;
-        } else if (quantity_int < 0 || quantity_int > 999) {
-            return true;
-        }
-        return false;
-
-    }
-
-    /**
-     *
-     * @param userInput
-     * @return if User input is valid return true, else false
-     * Validates user Input if int.@
-     */
     public boolean checkInputInt(String userInput) {
         try {
             Integer.parseInt(userInput);
@@ -262,7 +227,7 @@ public class OrderManager {
             return false;
         }
 
-        if (userInput_int < 0 || userInput_int > 5) {
+        if (userInput_int < 0.1 || userInput_int > 5) {
             return false;
         }
         return true;
@@ -270,8 +235,8 @@ public class OrderManager {
 
     /**
      *
-     * @return The last box to be added to the ArrayList. 
-     * Gets the last box added to the ArrayList of boxes. 
+     * @return The last box to be added to the ArrayList.
+     * Gets the last box added to the ArrayList of boxes.
      */
     public Box getLatestBox() {   //function that returns the latest box (for order content table - needed to display in table )
         return boxes.get(boxes.size() - 1);
