@@ -601,13 +601,13 @@ public class BoxUI2 extends javax.swing.JFrame {
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
         //deletes the selected row in the order display table
-        // @todo xsneeds to delete box from array
         int row = tbl_boxOrders.getSelectedRow();
-        orderManager.removeBox(row);
+        if(row!= -1){
+            orderManager.removeBox(row);
         DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
         model.removeRow(row);
         updateValues();
-
+        }
 
     }//GEN-LAST:event_btn_deleteActionPerformed
 
