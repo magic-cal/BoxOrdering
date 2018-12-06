@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Callum
+ * @author UP879195, UP825573 ,UP827158, UP867238
  */
 public class OrderManager {
 
@@ -137,7 +137,7 @@ public class OrderManager {
         int newNo = -1;
         try {
             newNo = Integer.parseInt(toTest);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println("Integer Error");
         }
         return newNo;
@@ -151,7 +151,7 @@ public class OrderManager {
         float newNo = -1;
         try {
             newNo = Float.parseFloat(toTest);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println("Float Error");
         }
         return newNo;
@@ -202,10 +202,11 @@ public class OrderManager {
         float quantity_int;
         try {
             boxHeight_float = Float.parseFloat(boxHeight);
-            boxWidth_float = Float.parseFloat(boxWidth);
+            boxWidth_float = Float.parseFloat
+        (boxWidth);
             boxLength_float = Float.parseFloat(boxLength);
             quantity_int = Integer.parseInt(quantity);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println("exception, not valid integer");
             return true;
         }
@@ -233,7 +234,7 @@ public class OrderManager {
     public boolean checkInputInt(String userInput) {
         try {
             Integer.parseInt(userInput);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println("exception, not valid integer");
             return false;
         }
@@ -256,7 +257,7 @@ public class OrderManager {
         float userInput_int;
         try {
             userInput_int = Float.parseFloat(userInput);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println("exception, not valid integer");
             return false;
         }
