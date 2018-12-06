@@ -5,14 +5,12 @@
  */
 package Order;
 
+import javax.swing.WindowConstants;
+
 /**
  *
  * @author Callum
  */
-import Order.BoxUI2;
-import javax.swing.JOptionPane;
-import javax.swing.WindowConstants;
-
 public class BoxUI extends javax.swing.JFrame {
 
     /**
@@ -30,12 +28,14 @@ public class BoxUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jbtn_Exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jbtn_Continue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jbtn_Exit.setText("Exit");
         jbtn_Exit.addActionListener(new java.awt.event.ActionListener() {
@@ -43,8 +43,21 @@ public class BoxUI extends javax.swing.JFrame {
                 jbtn_ExitActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(31, 92, 36, 0);
+        getContentPane().add(jbtn_Exit, gridBagConstraints);
 
         jLabel1.setText("Welcome to the Box Ordering System");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(37, 92, 0, 96);
+        getContentPane().add(jLabel1, gridBagConstraints);
 
         jbtn_Continue.setText("Continue");
         jbtn_Continue.addActionListener(new java.awt.event.ActionListener() {
@@ -52,32 +65,12 @@ public class BoxUI extends javax.swing.JFrame {
                 jbtn_ContinueActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbtn_Exit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbtn_Continue))
-                    .addComponent(jLabel1))
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtn_Continue)
-                    .addComponent(jbtn_Exit))
-                .addGap(36, 36, 36))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(31, 78, 36, 96);
+        getContentPane().add(jbtn_Continue, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,11 +80,20 @@ public class BoxUI extends javax.swing.JFrame {
         BoxUI.this.dispose();
     }//GEN-LAST:event_jbtn_ExitActionPerformed
 
+     /**
+     *
+     * @param evt is the event action that contains data about the click event
+     * Opens the main GUI interface for the user to add boxes with. 
+     * Sets properties of the new GUI.
+     * Hides and removes the current UI from the user. 
+     * 
+     * 
+     */
     private void jbtn_ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ContinueActionPerformed
-        // TODO add your handling code here:
         BoxUI2 Info = new BoxUI2();
         Info.setVisible(true);
         Info.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        Info.setResizable(false);
         BoxUI.this.setVisible(false);
         BoxUI.this.dispose();
 

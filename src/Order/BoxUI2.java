@@ -18,6 +18,10 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     OrderManager orderManager;
 
+    /**
+     *Creates a new Order manager that oversees the logic of manipulating boxes.
+     * Sets up the display and adds required information.
+     */
     public BoxUI2() {
         initComponents();
         orderManager = new OrderManager();
@@ -154,9 +158,9 @@ public class BoxUI2 extends javax.swing.JFrame {
         buttonGroup1.add(rbtn_2);
         rbtn_2.setText("2");
 
-        jLabel5.setText("Renforced Bottom:");
+        jLabel5.setText("Reinforced Bottom:");
 
-        jLabel6.setText("Renforced Corners:");
+        jLabel6.setText("Reinforced Corners:");
 
         buttonGroup2.add(rbtn_yes1);
         rbtn_yes1.setText("Yes");
@@ -271,7 +275,7 @@ public class BoxUI2 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Size", "Grade", "Sealable", "Colour", "ReBottom", "ReCorners", "Quantity"
+                "Size (m²)", "Grade", "Sealable", "Colours", "ReBottom", "ReCorners", "Quantity"
             }
         ) {
             Class[] types = new Class [] {
@@ -358,31 +362,32 @@ public class BoxUI2 extends javax.swing.JFrame {
                                                 .addGap(0, 0, 0)
                                                 .addComponent(rbtn_no3))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addGap(25, 25, 25)
-                                                .addComponent(rbtn_yes2)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(rbtn_no2))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addGap(25, 25, 25)
-                                                .addComponent(rbtn_yes1)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(rbtn_no1))
-                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(btn_clear)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(btn_delete)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel5)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(rbtn_yes1)
+                                                    .addGap(0, 0, 0)
+                                                    .addComponent(rbtn_no1))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel6)
+                                                    .addGap(25, 25, 25)
+                                                    .addComponent(rbtn_yes2)
+                                                    .addGap(0, 0, 0)
+                                                    .addComponent(rbtn_no2)))))))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(238, 238, 238)
                         .addComponent(noBoxes)
                         .addGap(84, 84, 84)
                         .addComponent(totCost)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,10 +411,9 @@ public class BoxUI2 extends javax.swing.JFrame {
                             .addComponent(rbtn_2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(rbtn_yes1)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(rbtn_yes1)
                             .addComponent(rbtn_no1))
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -425,7 +429,7 @@ public class BoxUI2 extends javax.swing.JFrame {
                                 .addComponent(jLabel12))
                             .addComponent(rbtn_yes3)
                             .addComponent(rbtn_no3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_clear)
                             .addComponent(jbtn_add)
@@ -483,6 +487,12 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtn_completeOrderActionPerformed
 
+    /**
+     * Checks for valid inputs when add button is selected. 
+     * When the inputs pass the validation tests, the data is sent to the 
+     * Order manager to add to the other boxes. 
+     *
+     */
     private void jbtn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_addActionPerformed
         // TODO add your handling code here:
         boolean validCheck = true;
@@ -508,11 +518,6 @@ public class BoxUI2 extends javax.swing.JFrame {
             colourPrint = 2;
         }
 
-//        if (orderManager.checkInput(txt_boxHeight.getText(),txt_boxWidth.getText(),txt_boxLength.getText(),txt_quantity.getText()) == false) {
-        // add the box as an object
-////            orderManager.addBox(TOP_ALIGNMENT, TOP_ALIGNMENT, TOP_ALIGNMENT, ERROR, reBottom);
-//        }
-//        else {
         outputCode = -2; // Input Error
         if (orderManager.checkInputFloat(txt_boxWidth.getText()) == false) {
             txt_boxWidth.setBackground(Color.red);
@@ -565,7 +570,9 @@ public class BoxUI2 extends javax.swing.JFrame {
     private void txt_boxHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_boxHeightActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_boxHeightActionPerformed
-
+    /**
+     *Clears inputted values when the Clear button is clicked 
+     */
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
         clearValues();
     }//GEN-LAST:event_btn_clearActionPerformed
@@ -582,6 +589,11 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtn_yes3ActionPerformed
 
+    
+     /**
+     *On window closing, 
+     * Prompt the user to make sure they want to close the window.
+     */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
 
         int confirmed = JOptionPane.showConfirmDialog(null,
@@ -591,18 +603,36 @@ public class BoxUI2 extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_formWindowClosing
-
+    /**
+     * @param evt the event of what was pressed 
+     * On help button pressed, show a help window of what to do and add. 
+     */
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
-        JOptionPane.showConfirmDialog(null, "Please fill each text field:\nBox Width: Please enter a width from 0cm - 999cm \nBox Length: Please enter a length from 0cm - 999cm \nBox Height: Please enter a height from 0cm - 999cm\nCardboard Grade: 1-5\nQuantity: Please enter a quantity integer greater that 0\nWhen all fields are full press add, once all boxs are added press complete", "Box order help!", JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog(null, "Please fill each text field:\n"
+                + "Box Width: Please enter a width from 0cm - 999cm \n"
+                + "Box Length: Please enter a length from 0cm - 999cm \n"
+                + "Box Height: Please enter a height from 0cm - 999cm\n"
+                + "Cardboard Grade: 1-5\n"
+                + "Quantity: Please enter a quantity integer greater that 0\n"
+                + "When all fields are full press add\n"
+                + "Once all boxs are added press complete",
+                "Box order help!", JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
     }//GEN-LAST:event_formKeyReleased
-
+     /**
+     * @param evt the event of what was pressed 
+     *Resets the error code on focus of the error text box.
+     */
     private void txt_boxWidthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxWidthFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_boxWidthFocusGained
     
+    /**
+     * @param evt the event of what was pressed 
+     * deletes a box based on the row that was selected. 
+     */
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
         //deletes the selected row in the order display table
@@ -615,19 +645,31 @@ public class BoxUI2 extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btn_deleteActionPerformed
-
+/**
+     * @param evt the event of what was pressed 
+     * resets colour error on text field focus gained 
+     */
     private void txt_boxLengthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxLengthFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_boxLengthFocusGained
-
+/**
+     * @param evt the event of what was pressed 
+     * resets colour error on text field focus gained 
+     */
     private void txt_boxHeightFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxHeightFocusGained
        resetError(evt);
     }//GEN-LAST:event_txt_boxHeightFocusGained
-
+/**
+     * @param evt the event of what was pressed 
+     * resets colour error on text field focus gained 
+     */
     private void txt_quantityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_quantityFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_quantityFocusGained
-
+/**
+     * @param evt the event of what was pressed 
+     * On clicking complete order, a prompt with order totals appears. 
+     */
     private void jbtn_completeOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_completeOrderMouseClicked
         DecimalFormat df = new DecimalFormat("0.00");
         String outputText = "Total order\n"
@@ -636,12 +678,13 @@ public class BoxUI2 extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null, outputText, "Final Order", JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_jbtn_completeOrderMouseClicked
 
+    /**
+     * Clears the data inputted by user.
+     */
     private void clearValues() {
-//      @todo make sure the radio buttons select no and the combo box selects 1
         txt_boxHeight.setText("");
         txt_boxWidth.setText("");
         txt_boxLength.setText("");
-//        txt_cardboardGrade.setText("");
         txt_quantity.setText("");
         buttonGroup1.clearSelection();
         buttonGroup2.clearSelection();
@@ -660,7 +703,10 @@ public class BoxUI2 extends javax.swing.JFrame {
     }
 
 
-
+/**
+     *Updates the data fields based by requesting the new values from 
+     * Order manager.
+     */
     private void updateValues() {
         noBoxes.setText("Num boxes: " + orderManager.getNumBoxes());
         DecimalFormat df = new DecimalFormat("0.00");
@@ -775,6 +821,10 @@ public class BoxUI2 extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
     }
 
+    /**
+     * @param evt the event of what was pressed 
+     * resets specific colour error on text field focus gained 
+     */
    private void resetError(java.awt.event.FocusEvent evt){
        evt.getComponent().setBackground(Color.white);
    }

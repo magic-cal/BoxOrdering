@@ -15,6 +15,12 @@ import java.util.Scanner;
  */
 public class Main {
 
+    /**
+     *
+     * @param args
+     * This method starts the main GUI and application logic. 
+     * 
+     */
     public static void main(String args[]) {
         BoxUI ui = new BoxUI();
     }

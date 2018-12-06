@@ -127,20 +127,6 @@
                                               <Component id="rbtn_no3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                              <Component id="rbtn_yes2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="rbtn_no2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                              <Component id="rbtn_yes1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="rbtn_no1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
                                               <Component id="btn_clear" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="btn_delete" min="-2" max="-2" attributes="0"/>
@@ -148,6 +134,22 @@
                                               <Component id="jbtn_add" min="-2" pref="64" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jbtn_completeOrder" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="rbtn_yes1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                                  <Component id="rbtn_no1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                                                  <Component id="rbtn_yes2" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                                  <Component id="rbtn_no2" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -162,7 +164,7 @@
                       <Component id="totCost" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -192,11 +194,10 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="rbtn_yes1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="rbtn_yes1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="rbtn_no1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -217,7 +218,7 @@
                           <Component id="rbtn_yes3" min="-2" max="-2" attributes="0"/>
                           <Component id="rbtn_no3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="7" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_clear" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jbtn_add" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -333,12 +334,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Renforced Bottom:"/>
+        <Property name="text" type="java.lang.String" value="Reinforced Bottom:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Renforced Corners:"/>
+        <Property name="text" type="java.lang.String" value="Reinforced Corners:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtn_yes1">
@@ -512,10 +513,10 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="7" rowCount="0">
-                <Column editable="false" title="Size" type="java.lang.Float"/>
+                <Column editable="false" title="Size (m&#xb2;)" type="java.lang.Float"/>
                 <Column editable="false" title="Grade" type="java.lang.Integer"/>
                 <Column editable="false" title="Sealable" type="java.lang.Boolean"/>
-                <Column editable="false" title="Colour" type="java.lang.Integer"/>
+                <Column editable="false" title="Colours" type="java.lang.Integer"/>
                 <Column editable="false" title="ReBottom" type="java.lang.Boolean"/>
                 <Column editable="false" title="ReCorners" type="java.lang.Boolean"/>
                 <Column editable="false" title="Quantity" type="java.lang.Integer"/>
