@@ -13,10 +13,10 @@ public class BoxType1 extends Box {
         super(boxSize, boxGrade, boxSealableTop, boxQuantity);
     }
 
-    @Override
-    public double getCost() {
-        double cost = super.getCost();
-        return cost;
-    }
+//    @Override
+//    public double getCost() {
+//        double cost = super.getCost();
+//        return cost;
+//    }
 
 }
