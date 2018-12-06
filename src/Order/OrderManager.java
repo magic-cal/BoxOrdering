@@ -195,42 +195,7 @@ public class OrderManager {
      * @return if all data is valid, return true. 
      * Checks if passed inputs are valid. 
      */
-    public boolean checkInput(String boxHeight, String boxWidth, String boxLength, String quantity) {
-        float boxHeight_float;
-        float boxWidth_float;
-        float boxLength_float;
-        float quantity_int;
-        try {
-            boxHeight_float = Float.parseFloat(boxHeight);
-            boxWidth_float = Float.parseFloat
-        (boxWidth);
-            boxLength_float = Float.parseFloat(boxLength);
-            quantity_int = Integer.parseInt(quantity);
-        } catch (NumberFormatException e) {
-            System.out.println("exception, not valid integer");
-            return true;
-        }
-
-        int check = 0;
-        if (boxHeight_float < 0 || boxHeight_float > 5.0) {
-            return true;
-        } else if (boxWidth_float < 0 || boxWidth_float > 5.0) {
-            return true;
-        } else if (boxLength_float < 0 || boxLength_float > 5.0) {
-            return true;
-        } else if (quantity_int < 0 || quantity_int > 999) {
-            return true;
-        }
-        return false;
-
-    }
-
-    /**
-     *
-     * @param userInput
-     * @return if User input is valid return true, else false
-     * Validates user Input if int.
-     */
+    
     public boolean checkInputInt(String userInput) {
         try {
             Integer.parseInt(userInput);
@@ -262,7 +227,7 @@ public class OrderManager {
             return false;
         }
 
-        if (userInput_int < 0 || userInput_int > 5) {
+        if (userInput_int < 0.1 || userInput_int > 5) {
             return false;
         }
         return true;
