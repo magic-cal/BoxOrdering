@@ -867,8 +867,8 @@ public class BoxUI2 extends javax.swing.JFrame {
                 parameterError();
             }
         } else if (outputCode > 0) {
-            JOptionPane.showConfirmDialog(null, "New Box " + outputCode +
-                    " added to order", "Successfully Added Box", 
+            JOptionPane.showConfirmDialog(null, "New Box added to order",
+                    "Successfully Added Box", 
                     JOptionPane.CLOSED_OPTION);
         }
     }
