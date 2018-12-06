@@ -19,10 +19,15 @@ public abstract class Box {
     protected boolean reCorners;
     private int quantity;
 
-    public Box() {
-    }
 
-    // Constructor
+    /**
+     *
+     * @param boxSize
+     * @param boxGrade
+     * @param boxSealableTop
+     * @param boxQuantity
+     * Constructor for box.
+     */
     public Box(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
         this.size = boxSize;
         this.grade = boxGrade;
@@ -32,35 +37,70 @@ public abstract class Box {
     }
 
     //Accessor Methods
+
+    /**
+     *
+     * @return size
+     */
     public float getSize() {
         return size;
     }
 
+    /**
+     *
+     * @return Box Grade
+     */
     public int getGrade() {
         return grade;
     }
 
+    /**
+     *
+     * @return Box colours. 
+     */
     public int getColourPrint() {
         return colourPrint;
     }
 
+    /**
+     *
+     * @return Box reinforced bottom true/false
+     */
     public boolean getReBottom() {
         return reBottom;
     }
 
+    /**
+     *
+     * @return Box reinforced corners true/false
+     */
     public boolean getReCorners() {
         return reCorners;
     }
 
+    /**
+     * 
+     * @return box sealable  top 
+     */
     public boolean getSealableTop() {
         return sealableTop;
     }
 
+    /**
+     *
+     * @return box quantity
+     */
     public int getQuantity() {
         return quantity;
     }
 
     //Methods
+
+    /**
+     *
+     * @return basic cost of the box (pre extras)
+     * Calculates the basic cost (pre extras) of the box. 
+     */
     public double getBasicCost() {
         double cost = 0.0;
         double gradeCost = 0;
@@ -91,6 +131,11 @@ public abstract class Box {
         return cost;
     }
 
+    /**
+     *
+     * @return total cost of the box. 
+     * Calculates the total cost of the box. 
+     */
     public double getCost() {
         double cost = 0.00;
         double basicCost = getBasicCost();

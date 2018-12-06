@@ -6,11 +6,25 @@ package Order;
  */
 public class BoxType4 extends BoxType3 {
 
+    /**
+     *
+     * @param boxSize
+     * @param boxGrade
+     * @param boxSealableTop
+     * @param boxQuantity
+     * Constructor for box type 4
+     */
     public BoxType4(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
         super(boxSize, boxGrade, boxSealableTop, boxQuantity);
         this.reBottom = true;
     }
 
+    /**
+     *
+     * @return total cost of the box. 
+     * Calculates the total cost of the box. 
+     * Adds additional cost for reinforced bottom
+     */
     @Override
     public double getCost() {
         double cost = super.getCost();

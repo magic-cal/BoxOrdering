@@ -45,39 +45,41 @@ public class BoxUI2 extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jbtn_completeOrder = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txt_boxHeight = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        rbtn_0 = new javax.swing.JRadioButton();
-        rbtn_1 = new javax.swing.JRadioButton();
-        rbtn_2 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        rbtn_yes1 = new javax.swing.JRadioButton();
-        rbtn_no1 = new javax.swing.JRadioButton();
-        rbtn_yes2 = new javax.swing.JRadioButton();
-        rbtn_no2 = new javax.swing.JRadioButton();
-        jLabel7 = new javax.swing.JLabel();
-        txt_quantity = new javax.swing.JTextField();
         jbtn_add = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         noBoxes = new javax.swing.JLabel();
         totCost = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        txt_boxWidth = new javax.swing.JTextField();
-        txt_boxLength = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        rbtn_yes3 = new javax.swing.JRadioButton();
-        rbtn_no3 = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         btn_help = new javax.swing.JButton();
-        cmb_cardboardGrade = new javax.swing.JComboBox<>();
         btn_delete = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_boxOrders = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        txt_boxLength = new javax.swing.JTextField();
+        txt_boxHeight = new javax.swing.JTextField();
+        txt_quantity = new javax.swing.JTextField();
+        cmb_cardboardGrade = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        txt_boxWidth = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        rbtn_no1 = new javax.swing.JRadioButton();
+        rbtn_2 = new javax.swing.JRadioButton();
+        rbtn_yes3 = new javax.swing.JRadioButton();
+        rbtn_yes1 = new javax.swing.JRadioButton();
+        rbtn_0 = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
+        rbtn_yes2 = new javax.swing.JRadioButton();
+        rbtn_no3 = new javax.swing.JRadioButton();
+        rbtn_1 = new javax.swing.JRadioButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        rbtn_no2 = new javax.swing.JRadioButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,81 +121,6 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Box Order Form");
-
-        jLabel2.setText("Box Width /m:");
-
-        txt_boxHeight.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txt_boxHeightFocusGained(evt);
-            }
-        });
-        txt_boxHeight.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_boxHeightActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Cardboard grade:");
-
-        jLabel4.setText("Colour print:");
-
-        buttonGroup1.add(rbtn_0);
-        rbtn_0.setSelected(true);
-        rbtn_0.setText("0");
-        rbtn_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn_0ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(rbtn_1);
-        rbtn_1.setText("1");
-        rbtn_1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn_1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(rbtn_2);
-        rbtn_2.setText("2");
-
-        jLabel5.setText("Reinforced Bottom:");
-
-        jLabel6.setText("Reinforced Corners:");
-
-        buttonGroup2.add(rbtn_yes1);
-        rbtn_yes1.setText("Yes");
-        rbtn_yes1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn_yes1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup2.add(rbtn_no1);
-        rbtn_no1.setSelected(true);
-        rbtn_no1.setText("No");
-        rbtn_no1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn_no1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(rbtn_yes2);
-        rbtn_yes2.setText("Yes");
-
-        buttonGroup3.add(rbtn_no2);
-        rbtn_no2.setSelected(true);
-        rbtn_no2.setText("No");
-
-        jLabel7.setText("Quantity:");
-
-        txt_quantity.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txt_quantityFocusGained(evt);
-            }
-        });
-
         jbtn_add.setText("Add");
         jbtn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,46 +139,6 @@ public class BoxUI2 extends javax.swing.JFrame {
 
         totCost.setText("Cost");
 
-        jLabel10.setText("Box Length /m:");
-
-        jLabel11.setText("Box Height /m:");
-
-        txt_boxWidth.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txt_boxWidthFocusGained(evt);
-            }
-        });
-        txt_boxWidth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_boxWidthActionPerformed(evt);
-            }
-        });
-
-        txt_boxLength.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txt_boxLengthFocusGained(evt);
-            }
-        });
-        txt_boxLength.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_boxLengthActionPerformed(evt);
-            }
-        });
-
-        jLabel12.setText("Sealable Top:");
-
-        buttonGroup4.add(rbtn_yes3);
-        rbtn_yes3.setText("Yes");
-        rbtn_yes3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn_yes3ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup4.add(rbtn_no3);
-        rbtn_no3.setSelected(true);
-        rbtn_no3.setText("No");
-
         jLabel13.setText("Extras");
 
         btn_help.setText("Help");
@@ -260,8 +147,6 @@ public class BoxUI2 extends javax.swing.JFrame {
                 btn_helpActionPerformed(evt);
             }
         });
-
-        cmb_cardboardGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
         btn_delete.setText("Delete");
         btn_delete.addActionListener(new java.awt.event.ActionListener() {
@@ -304,157 +189,323 @@ public class BoxUI2 extends javax.swing.JFrame {
             tbl_boxOrders.getColumnModel().getColumn(6).setResizable(false);
         }
 
+        jLabel11.setText("Box Height /m:");
+
+        txt_boxLength.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_boxLengthFocusGained(evt);
+            }
+        });
+        txt_boxLength.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_boxLengthActionPerformed(evt);
+            }
+        });
+
+        txt_boxHeight.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_boxHeightFocusGained(evt);
+            }
+        });
+        txt_boxHeight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_boxHeightActionPerformed(evt);
+            }
+        });
+
+        txt_quantity.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_quantityFocusGained(evt);
+            }
+        });
+
+        cmb_cardboardGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+
+        jLabel1.setText("Box Order Form");
+
+        txt_boxWidth.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_boxWidthFocusGained(evt);
+            }
+        });
+        txt_boxWidth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_boxWidthActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Quantity:");
+
+        jLabel10.setText("Box Length /m:");
+
+        jLabel2.setText("Box Width /m:");
+
+        jLabel3.setText("Cardboard grade:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(167, 167, 167))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_boxWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel10)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_boxLength, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel11)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_boxHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(18, 18, 18)
+                            .addComponent(cmb_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addGap(18, 18, 18)
+                            .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(2, 2, 2))))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_boxWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(txt_boxLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txt_boxHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(cmb_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addContainerGap())
+        );
+
+        buttonGroup2.add(rbtn_no1);
+        rbtn_no1.setSelected(true);
+        rbtn_no1.setText("No");
+        rbtn_no1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_no1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbtn_2);
+        rbtn_2.setText("2");
+
+        buttonGroup4.add(rbtn_yes3);
+        rbtn_yes3.setText("Yes");
+        rbtn_yes3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_yes3ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(rbtn_yes1);
+        rbtn_yes1.setText("Yes");
+        rbtn_yes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_yes1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbtn_0);
+        rbtn_0.setSelected(true);
+        rbtn_0.setText("0");
+        rbtn_0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_0ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Reinforced Bottom:");
+
+        buttonGroup3.add(rbtn_yes2);
+        rbtn_yes2.setText("Yes");
+
+        buttonGroup4.add(rbtn_no3);
+        rbtn_no3.setSelected(true);
+        rbtn_no3.setText("No");
+
+        buttonGroup1.add(rbtn_1);
+        rbtn_1.setText("1");
+        rbtn_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_1ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Sealable Top:");
+
+        jLabel6.setText("Reinforced Corners:");
+
+        jLabel4.setText("Colour print:");
+
+        buttonGroup3.add(rbtn_no2);
+        rbtn_no2.setSelected(true);
+        rbtn_no2.setText("No");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4)
+                            .addGap(18, 18, 18)
+                            .addComponent(rbtn_0)
+                            .addGap(0, 0, 0)
+                            .addComponent(rbtn_1)
+                            .addGap(0, 0, 0)
+                            .addComponent(rbtn_2))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(45, 45, 45)
+                            .addComponent(jLabel6)
+                            .addGap(32, 32, 32)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(rbtn_yes1)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(rbtn_no1))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(rbtn_yes2)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(rbtn_no2)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(rbtn_yes3)
+                                .addGap(0, 0, 0)
+                                .addComponent(rbtn_no3))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(124, 124, 124))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel12)
+                        .addGap(124, 124, 124)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rbtn_0)
+                        .addComponent(jLabel4))
+                    .addComponent(rbtn_1)
+                    .addComponent(rbtn_2))
+                .addGap(17, 17, 17)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rbtn_yes1)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rbtn_no1))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rbtn_yes2)
+                        .addComponent(jLabel6))
+                    .addComponent(rbtn_no2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbtn_yes3)
+                    .addComponent(rbtn_no3)
+                    .addComponent(jLabel12))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(275, 275, 275)
-                                .addComponent(jLabel13)
-                                .addGap(184, 184, 184)
-                                .addComponent(btn_help))
+                                .addComponent(noBoxes)
+                                .addGap(181, 181, 181)
+                                .addComponent(totCost))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txt_boxWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txt_boxLength, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txt_boxHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cmb_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2)))
+                                .addGap(390, 390, 390)
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_help))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(135, 135, 135)
-                                        .addComponent(jLabel4)
-                                        .addGap(19, 19, 19)
-                                        .addComponent(rbtn_0)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(rbtn_1)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(rbtn_2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(177, 177, 177)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel12)
-                                                .addGap(30, 30, 30)
-                                                .addComponent(rbtn_yes3)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(rbtn_no3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btn_clear)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btn_delete)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel5)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(rbtn_yes1)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(rbtn_no1))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel6)
-                                                    .addGap(25, 25, 25)
-                                                    .addComponent(rbtn_yes2)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(rbtn_no2)))))))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(noBoxes)
-                        .addGap(84, 84, 84)
-                        .addComponent(totCost)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                                        .addGap(128, 128, 128)
+                                        .addComponent(btn_clear)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(btn_delete)
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jbtn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(8, 8, 8))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jbtn_completeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(8, 8, 8)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel13))
-                    .addComponent(btn_help))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel4))
-                            .addComponent(rbtn_0)
-                            .addComponent(rbtn_1)
-                            .addComponent(rbtn_2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(rbtn_yes1)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(rbtn_no1))
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel6))
-                            .addComponent(rbtn_yes2)
-                            .addComponent(rbtn_no2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel12))
-                            .addComponent(rbtn_yes3)
-                            .addComponent(rbtn_no3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(btn_help))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_clear)
                             .addComponent(jbtn_add)
                             .addComponent(btn_delete)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txt_boxWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txt_boxLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(txt_boxHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(cmb_cardboardGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txt_quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(13, 13, 13)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -540,9 +591,9 @@ public class BoxUI2 extends javax.swing.JFrame {
         boxHeight = orderManager.testFloat(txt_boxHeight.getText());
         boxWidth = orderManager.testFloat(txt_boxWidth.getText());
         boxLength = orderManager.testFloat(txt_boxLength.getText());
-//        cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
+//        cardboardGrade = orderManager.testInt(txt_cardboardGrade.getText());
         cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1;
-        quantity = orderManager.testNo(txt_quantity.getText());
+        quantity = orderManager.testInt(txt_quantity.getText());
             
             
             outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
@@ -776,6 +827,8 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
@@ -800,6 +853,12 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_quantity;
     // End of variables declaration//GEN-END:variables
 
+    
+/**
+     *@param outputCode the code relating to which type of output it is. 
+     * Selects which output is required based on the outputCode. 
+     * 
+     */
     private void outputPrompt(int outputCode) {
         if (outputCode < 0) {
             if (outputCode == -1) {
@@ -808,17 +867,28 @@ public class BoxUI2 extends javax.swing.JFrame {
                 parameterError();
             }
         } else if (outputCode > 0) {
-            JOptionPane.showConfirmDialog(null, "New Box " + outputCode + " added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
+            JOptionPane.showConfirmDialog(null, "New Box " + outputCode +
+                    " added to order", "Successfully Added Box", 
+                    JOptionPane.CLOSED_OPTION);
         }
     }
 
+    /**
+     *Outputs error when the inputs are invalid. 
+     */
     private void parameterError() {
-        JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add box\nCheck Inputs are valid", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add box\n"
+                + "Check Inputs are valid", "ERROR ADDING BOX",
+                JOptionPane.CLOSED_OPTION);
     }
-
+/**
+     *The selected type is valid but cannot be supplied by flex box
+     */
     private void notSupplied() {
         //check if just a parameter error
-        JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog(null, "Sorry\n"
+                + "Flexbox does not supply this box", "ERROR ADDING BOX",
+                JOptionPane.CLOSED_OPTION);
     }
 
     /**

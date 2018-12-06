@@ -7,12 +7,24 @@ package Order;
  */
 public class BoxType2 extends Box {
 
-    // Constructor
+    /**
+     *
+     * @param boxSize
+     * @param boxGrade
+     * @param boxSealableTop
+     * @param boxQuantity
+     * Constructor for Box type 2. 
+     */
     public BoxType2(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
         super(boxSize, boxGrade, boxSealableTop, boxQuantity);
         this.colourPrint = 1;
     }
-
+    /**
+     *
+     * @return total cost of the box. 
+     * Calculates the total cost of the box.
+     * Adds the cost of one colour. 
+     */
     @Override
     public double getCost() {
         double cost = super.getCost();

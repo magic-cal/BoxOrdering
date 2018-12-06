@@ -8,22 +8,36 @@ import java.util.ArrayList;
  */
 public class OrderManager {
 
-    ArrayList<Box> boxes = new ArrayList();
+    ArrayList<Box> boxes;
 
+    /**
+     *Constructor for the order manager.
+     * Creates an ArrayList of boxes.
+     */
     public OrderManager() {
-//        this.addBox();
+        boxes = new ArrayList();
     }
-//    boxWidth,boxLength,boxHeight,cardboardGrade,colourPrint,reBottom,reCorners,sealableTop,quantity
 
+    /**
+     *
+     * @param width
+     * @param length
+     * @param height
+     * @param grade
+     * @param colourPrint
+     * @param reBottom
+     * @param reCorners
+     * @param sealedTop
+     * @param quantity
+     * @return the output code (which box has been created or Not)
+     * 
+     * Adds a box to the ArrayList of Boxes if the box can be provided by 
+     * flexbox.
+     */
     public int addBox(float width, float length, float height, int grade,
             int colourPrint, boolean reBottom, boolean reCorners,
             boolean sealedTop, int quantity) {
         float size = getSize(width, length, height);
-
-//            @TODO Check valid inputs
-//          if(these are invalid){
-//              return -2;
-//          }
         switch (boxType(grade, colourPrint, reBottom, reCorners)) {
             case 1:
                 System.out.println("box 1");
@@ -52,10 +66,23 @@ public class OrderManager {
 
     }
 
+    /**
+     *
+     * @param boxIndex which position to remove. 
+     * Removes a box from a specified index. 
+     */
     public void removeBox(int boxIndex) {
         boxes.remove(boxIndex);
     }
 
+    /**
+     *
+     * @param width
+     * @param length
+     * @param height
+     * @return Calculates the size of a box based on length, width and height. 
+     * Calculates the size of a box based on length, width and height. 
+     */
     private float getSize(float width, float length, float height) {
         //calculates surface area of the Box
         float size = (2 * length * width) + (2 * length * height) + (2 * height * width);
@@ -64,10 +91,20 @@ public class OrderManager {
         return size;
     }
 
+    /**
+     *
+     * @return ArrayList of boxes 
+     * Gives the list of All Boxes 
+     */
     public ArrayList<Box> getBoxes() {
         return boxes;
     }
 
+    /**
+     *
+     * @return sum of all box costs.
+     * Calculates the sum of all boxes. 
+     */
     public double getAllCosts() {
 
         double totalCost = 0.00;
@@ -77,6 +114,12 @@ public class OrderManager {
         return totalCost;
     }
 
+    /**
+     *
+     * @return total number of boxes
+     * calculates total number of boxes.
+     * 
+     */
     public int getNumBoxes() {
         int boxNo = 0;
         for (Box box : boxes) {
@@ -85,7 +128,12 @@ public class OrderManager {
         return boxNo;
     }
 
-    public int testNo(String toTest) {
+    /**
+     *
+     * @param toTest the string to test. 
+     * @return if the string was valid as an integer.
+     */
+    public int testInt(String toTest) {
         int newNo = -1;
         try {
             newNo = Integer.parseInt(toTest);
@@ -94,7 +142,11 @@ public class OrderManager {
         }
         return newNo;
     }
-
+    /**
+     *
+     * @param toTest the string to test. 
+     * @return if the string was valid as an float.
+     */
     public float testFloat(String toTest) {
         float newNo = -1;
         try {
@@ -105,6 +157,16 @@ public class OrderManager {
         return newNo;
     }
 
+    /**
+     *
+     * @param grade 
+     * @param colourPrint
+     * @param reBottom
+     * @param reCorners
+     * @return the type of the box that can be created or -1 if not. 
+     * Selects the correct type of box based on inputs. -1 if cannot be created 
+     * 
+     */
     public int boxType(int grade, int colourPrint, boolean reBottom, boolean reCorners) {
         //calculates the grade type of the Box
         int boxType = -1;
@@ -124,6 +186,15 @@ public class OrderManager {
         return boxType;
     }
 
+    /**
+     *
+     * @param boxHeight
+     * @param boxWidth
+     * @param boxLength
+     * @param quantity
+     * @return if all data is valid, return true. 
+     * Checks if passed inputs are valid. 
+     */
     public boolean checkInput(String boxHeight, String boxWidth, String boxLength, String quantity) {
         float boxHeight_float;
         float boxWidth_float;
@@ -153,6 +224,12 @@ public class OrderManager {
 
     }
 
+    /**
+     *
+     * @param userInput
+     * @return if User input is valid return true, else false
+     * Validates user Input if int.
+     */
     public boolean checkInputInt(String userInput) {
         try {
             Integer.parseInt(userInput);
@@ -169,6 +246,12 @@ public class OrderManager {
         return true;
     }
 
+        /**
+     *
+     * @param userInput
+     * @return if User input is valid return true, else false
+     * Validates user Input if float.
+     */
     public boolean checkInputFloat(String userInput) {
         float userInput_int;
         try {
@@ -184,6 +267,11 @@ public class OrderManager {
         return true;
     }
 
+    /**
+     *
+     * @return The last box to be added to the ArrayList. 
+     * Gets the last box added to the ArrayList of boxes. 
+     */
     public Box getLatestBox() {   //function that returns the latest box (for order content table - needed to display in table )
         return boxes.get(boxes.size() - 1);
     }
