@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author felixmayo
+ * @author UP879195, UP825573 ,UP827158, UP867238
  */
 public class BoxUI2 extends javax.swing.JFrame {
 

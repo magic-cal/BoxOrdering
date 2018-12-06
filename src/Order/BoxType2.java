@@ -3,7 +3,7 @@ package Order;
 //import java.text.NumberFormat;
 /**
  *
- * @author Callum
+ * @author UP879195, UP825573 ,UP827158, UP867238
  */
 public class BoxType2 extends Box {
 
