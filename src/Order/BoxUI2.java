@@ -104,6 +104,11 @@ public class BoxUI2 extends javax.swing.JFrame {
         });
 
         jbtn_completeOrder.setText("Complete Order");
+        jbtn_completeOrder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtn_completeOrderMouseClicked(evt);
+            }
+        });
         jbtn_completeOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_completeOrderActionPerformed(evt);
@@ -622,6 +627,14 @@ public class BoxUI2 extends javax.swing.JFrame {
     private void txt_quantityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_quantityFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_quantityFocusGained
+
+    private void jbtn_completeOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_completeOrderMouseClicked
+        DecimalFormat df = new DecimalFormat("0.00");
+        String outputText = "Total order\n"
+                + "Number of Boxes ordered "+ orderManager.getNumBoxes()+
+                "\nTotal Cost of boxes £"+ df.format(orderManager.getAllCosts());
+        JOptionPane.showConfirmDialog(null, outputText, "Final Order", JOptionPane.CLOSED_OPTION);
+    }//GEN-LAST:event_jbtn_completeOrderMouseClicked
 
     private void clearValues() {
 //      @todo make sure the radio buttons select no and the combo box selects 1
