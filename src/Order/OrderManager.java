@@ -211,13 +211,13 @@ public class OrderManager {
         }
 
         int check = 0;
-        if (boxHeight_float < 0 || boxHeight_float > 999.99) {
+        if (boxHeight_float < 0 || boxHeight_float > 5.0) {
             return true;
-        } else if (boxWidth_float < 0 || boxWidth_float > 999.99) {
+        } else if (boxWidth_float < 0 || boxWidth_float > 5.0) {
             return true;
-        } else if (boxLength_float < 0 || boxLength_float > 999.99) {
+        } else if (boxLength_float < 0 || boxLength_float > 5.0) {
             return true;
-        } else if (quantity_int < 0 || quantity_int > 100) {
+        } else if (quantity_int < 0 || quantity_int > 999) {
             return true;
         }
         return false;
@@ -261,7 +261,7 @@ public class OrderManager {
             return false;
         }
 
-        if (userInput_int < 0 || userInput_int > 999) {
+        if (userInput_int < 0 || userInput_int > 5) {
             return false;
         }
         return true;

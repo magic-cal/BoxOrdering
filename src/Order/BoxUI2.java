@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BoxUI2 extends javax.swing.JFrame {
 
-    OrderManager orderManager;
+    OrderManager orderManager; 
 
     /**
      *Creates a new Order manager that oversees the logic of manipulating boxes.
@@ -660,9 +660,9 @@ public class BoxUI2 extends javax.swing.JFrame {
      */
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
         JOptionPane.showConfirmDialog(null, "Please fill each text field:\n"
-                + "Box Width: Please enter a width from 0m - 999m \n"
-                + "Box Length: Please enter a length from 0m - 999m \n"
-                + "Box Height: Please enter a height from 0m - 999m\n"
+                + "Box Width: Please enter a width from 0m - 5m \n"
+                + "Box Length: Please enter a length from 0m - 5m \n"
+                + "Box Height: Please enter a height from 0m - 5m\n"
                 + "Cardboard Grade: 1-5\n"
                 + "Quantity: Please enter a quantity integer greater that 0 and less than 999\n"
                 + "When all fields are full press add\n"
