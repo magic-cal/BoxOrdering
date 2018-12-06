@@ -7,11 +7,25 @@ package Order;
 
 public class BoxType5 extends BoxType4 {
 
+    /**
+     *
+     * @param boxSize
+     * @param boxGrade
+     * @param boxSealableTop
+     * @param boxQuantity
+     * Constructor for box type 5
+     */
     public BoxType5(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
         super(boxSize, boxGrade, boxSealableTop, boxQuantity);
         this.reCorners = true;
     }
 
+    /**
+     *
+     * @return total cost of the box. 
+     * Calculates the total cost of the box. 
+     * Adds additional cost for reinforced corners.
+     */
     @Override
     public double getCost() {
         double cost = super.getCost();

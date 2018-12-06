@@ -540,9 +540,9 @@ public class BoxUI2 extends javax.swing.JFrame {
         boxHeight = orderManager.testFloat(txt_boxHeight.getText());
         boxWidth = orderManager.testFloat(txt_boxWidth.getText());
         boxLength = orderManager.testFloat(txt_boxLength.getText());
-//        cardboardGrade = orderManager.testNo(txt_cardboardGrade.getText());
+//        cardboardGrade = orderManager.testInt(txt_cardboardGrade.getText());
         cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1;
-        quantity = orderManager.testNo(txt_quantity.getText());
+        quantity = orderManager.testInt(txt_quantity.getText());
             
             
             outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
@@ -800,6 +800,12 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_quantity;
     // End of variables declaration//GEN-END:variables
 
+    
+/**
+     *@param outputCode the code relating to which type of output it is. 
+     * Selects which output is required based on the outputCode. 
+     * 
+     */
     private void outputPrompt(int outputCode) {
         if (outputCode < 0) {
             if (outputCode == -1) {
@@ -808,17 +814,28 @@ public class BoxUI2 extends javax.swing.JFrame {
                 parameterError();
             }
         } else if (outputCode > 0) {
-            JOptionPane.showConfirmDialog(null, "New Box " + outputCode + " added to order", "Successfully Added Box", JOptionPane.CLOSED_OPTION);
+            JOptionPane.showConfirmDialog(null, "New Box " + outputCode +
+                    " added to order", "Successfully Added Box", 
+                    JOptionPane.CLOSED_OPTION);
         }
     }
 
+    /**
+     *Outputs error when the inputs are invalid. 
+     */
     private void parameterError() {
-        JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add box\nCheck Inputs are valid", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add box\n"
+                + "Check Inputs are valid", "ERROR ADDING BOX",
+                JOptionPane.CLOSED_OPTION);
     }
-
+/**
+     *The selected type is valid but cannot be supplied by flex box
+     */
     private void notSupplied() {
         //check if just a parameter error
-        JOptionPane.showConfirmDialog(null, "Sorry\nFlexbox does not supply this box", "ERROR ADDING BOX", JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog(null, "Sorry\n"
+                + "Flexbox does not supply this box", "ERROR ADDING BOX",
+                JOptionPane.CLOSED_OPTION);
     }
 
     /**
