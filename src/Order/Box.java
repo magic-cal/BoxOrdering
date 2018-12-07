@@ -22,10 +22,10 @@ public abstract class Box {
 
     /**
      *
-     * @param boxSize
-     * @param boxGrade
-     * @param boxSealableTop
-     * @param boxQuantity
+     * @param boxSize size of the box to be created
+     * @param boxGrade grade of the box to be created
+     * @param boxSealableTop if the box should be sealable
+     * @param boxQuantity quantity of the box to be created
      * Constructor for box.
      */
     public Box(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
@@ -127,7 +127,7 @@ public abstract class Box {
                 break;
         }
         cost += gradeCost * size;
-        cost *= quantity;
+        
         return cost;
     }
 
@@ -143,6 +143,7 @@ public abstract class Box {
             cost += basicCost * 0.10;
         }
         cost += basicCost;
+        cost *= quantity;
         return cost;
     }
 

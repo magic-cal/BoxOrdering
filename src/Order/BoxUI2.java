@@ -16,11 +16,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BoxUI2 extends javax.swing.JFrame {
 
-    OrderManager orderManager; 
+    OrderManager orderManager;
 
     /**
-     *Creates a new Order manager that oversees the logic of manipulating boxes.
-     * Sets up the display and adds required information.
+     * Creates a new Order manager that oversees the logic of manipulating
+     * boxes. Sets up the display and adds required information.
      */
     public BoxUI2() {
         initComponents();
@@ -539,9 +539,9 @@ public class BoxUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_completeOrderActionPerformed
 
     /**
-     * Checks for valid inputs when add button is selected. 
-     * When the inputs pass the validation tests, the data is sent to the 
-     * Order manager to add to the other boxes. 
+     * Checks for valid inputs when add button is selected. When the inputs pass
+     * the validation tests, the data is sent to the Order manager to add to the
+     * other boxes.
      *
      */
     private void jbtn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_addActionPerformed
@@ -557,8 +557,6 @@ public class BoxUI2 extends javax.swing.JFrame {
         int colourPrint = 3;
         boolean reBottom = rbtn_yes1.isSelected(); //considered always false
         boolean reCorners = rbtn_yes2.isSelected(); //considered always false
-
-
 
         //colour print
         if (rbtn_0.isSelected() == true) {
@@ -586,16 +584,15 @@ public class BoxUI2 extends javax.swing.JFrame {
             txt_quantity.setBackground(Color.red);
             validCheck = false;
         }
-        
+
         if (validCheck == true) {
-        boxHeight = orderManager.testFloat(txt_boxHeight.getText());
-        boxWidth = orderManager.testFloat(txt_boxWidth.getText());
-        boxLength = orderManager.testFloat(txt_boxLength.getText());
+            boxHeight = orderManager.testFloat(txt_boxHeight.getText());
+            boxWidth = orderManager.testFloat(txt_boxWidth.getText());
+            boxLength = orderManager.testFloat(txt_boxLength.getText());
 //        cardboardGrade = orderManager.testInt(txt_cardboardGrade.getText());
-        cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1;
-        quantity = orderManager.testInt(txt_quantity.getText());
-            
-            
+            cardboardGrade = cmb_cardboardGrade.getSelectedIndex() + 1;
+            quantity = orderManager.testInt(txt_quantity.getText());
+
             outputCode = orderManager.addBox(boxWidth, boxLength, boxHeight,
                     cardboardGrade, colourPrint, reBottom, reCorners,
                     sealableTop, quantity);
@@ -622,7 +619,7 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_boxHeightActionPerformed
     /**
-     *Clears inputted values when the Clear button is clicked 
+     * Clears inputted values when the Clear button is clicked
      */
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
         clearValues();
@@ -640,10 +637,9 @@ public class BoxUI2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtn_yes3ActionPerformed
 
-    
-     /**
-     *On window closing, 
-     * Prompt the user to make sure they want to close the window.
+    /**
+     * On window closing, Prompt the user to make sure they want to close the
+     * window.
      */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
 
@@ -655,8 +651,8 @@ public class BoxUI2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowClosing
     /**
-     * @param evt the event of what was pressed 
-     * On help button pressed, show a help window of what to do and add. 
+     * @param evt the event of what was pressed On help button pressed, show a
+     * help window of what to do and add.
      */
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
         JOptionPane.showConfirmDialog(null, "Please fill each text field:\n"
@@ -672,60 +668,60 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
     }//GEN-LAST:event_formKeyReleased
-     /**
-     * @param evt the event of what was pressed 
-     *Resets the error code on focus of the error text box.
+    /**
+     * @param evt the event of what was pressed Resets the error code on focus
+     * of the error text box.
      */
     private void txt_boxWidthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxWidthFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_boxWidthFocusGained
-    
+
     /**
-     * @param evt the event of what was pressed 
-     * deletes a box based on the row that was selected. 
+     * @param evt the event of what was pressed deletes a box based on the row
+     * that was selected.
      */
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
         //deletes the selected row in the order display table
         int row = tbl_boxOrders.getSelectedRow();
-        if(row!= -1){
+        if (row != -1) {
             orderManager.removeBox(row);
-        DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
-        model.removeRow(row);
-        updateValues();
+            DefaultTableModel model = (DefaultTableModel) tbl_boxOrders.getModel();
+            model.removeRow(row);
+            updateValues();
         }
 
     }//GEN-LAST:event_btn_deleteActionPerformed
-/**
-     * @param evt the event of what was pressed 
-     * resets colour error on text field focus gained 
+    /**
+     * @param evt the event of what was pressed resets colour error on text
+     * field focus gained
      */
     private void txt_boxLengthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxLengthFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_boxLengthFocusGained
-/**
-     * @param evt the event of what was pressed 
-     * resets colour error on text field focus gained 
+    /**
+     * @param evt the event of what was pressed resets colour error on text
+     * field focus gained
      */
     private void txt_boxHeightFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_boxHeightFocusGained
-       resetError(evt);
+        resetError(evt);
     }//GEN-LAST:event_txt_boxHeightFocusGained
-/**
-     * @param evt the event of what was pressed 
-     * resets colour error on text field focus gained 
+    /**
+     * @param evt the event of what was pressed resets colour error on text
+     * field focus gained
      */
     private void txt_quantityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_quantityFocusGained
         resetError(evt);
     }//GEN-LAST:event_txt_quantityFocusGained
-/**
-     * @param evt the event of what was pressed 
-     * On clicking complete order, a prompt with order totals appears. 
+    /**
+     * @param evt the event of what was pressed On clicking complete order, a
+     * prompt with order totals appears.
      */
     private void jbtn_completeOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtn_completeOrderMouseClicked
         DecimalFormat df = new DecimalFormat("0.00");
         String outputText = "Total order\n"
-                + "Number of Boxes ordered "+ orderManager.getNumBoxes()+
-                "\nTotal Cost of boxes £"+ df.format(orderManager.getAllCosts());
+                + "Number of Boxes ordered " + orderManager.getNumBoxes()
+                + "\nTotal Cost of boxes £" + df.format(orderManager.getAllCosts());
         JOptionPane.showConfirmDialog(null, outputText, "Final Order", JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_jbtn_completeOrderMouseClicked
 
@@ -753,10 +749,9 @@ public class BoxUI2 extends javax.swing.JFrame {
 
     }
 
-
-/**
-     *Updates the data fields based by requesting the new values from 
-     * Order manager.
+    /**
+     * Updates the data fields based by requesting the new values from Order
+     * manager.
      */
     private void updateValues() {
         noBoxes.setText("Num boxes: " + orderManager.getNumBoxes());
@@ -853,11 +848,10 @@ public class BoxUI2 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_quantity;
     // End of variables declaration//GEN-END:variables
 
-    
-/**
-     *@param outputCode the code relating to which type of output it is. 
-     * Selects which output is required based on the outputCode. 
-     * 
+    /**
+     * @param outputCode the code relating to which type of output it is.
+     * Selects which output is required based on the outputCode.
+     *
      */
     private void outputPrompt(int outputCode) {
         if (outputCode < 0) {
@@ -868,21 +862,22 @@ public class BoxUI2 extends javax.swing.JFrame {
             }
         } else if (outputCode > 0) {
             JOptionPane.showConfirmDialog(null, "New Box added to order",
-                    "Successfully Added Box", 
+                    "Successfully Added Box",
                     JOptionPane.CLOSED_OPTION);
         }
     }
 
     /**
-     *Outputs error when the inputs are invalid. 
+     * Outputs error when the inputs are invalid.
      */
     private void parameterError() {
         JOptionPane.showConfirmDialog(null, "New Boxes Failed To Add box\n"
                 + "Check Inputs are valid", "ERROR ADDING BOX",
                 JOptionPane.CLOSED_OPTION);
     }
-/**
-     *The selected type is valid but cannot be supplied by flex box
+
+    /**
+     * The selected type is valid but cannot be supplied by flex box
      */
     private void notSupplied() {
         //check if just a parameter error
@@ -892,10 +887,10 @@ public class BoxUI2 extends javax.swing.JFrame {
     }
 
     /**
-     * @param evt the event of what was pressed 
-     * resets specific colour error on text field focus gained 
+     * @param evt the event of what was pressed resets specific colour error on
+     * text field focus gained
      */
-   private void resetError(java.awt.event.FocusEvent evt){
-       evt.getComponent().setBackground(Color.white);
-   }
+    private void resetError(java.awt.event.FocusEvent evt) {
+        evt.getComponent().setBackground(Color.white);
+    }
 }

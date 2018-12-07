@@ -20,15 +20,17 @@ public class OrderManager {
 
     /**
      *
-     * @param width
-     * @param length
-     * @param height
-     * @param grade
-     * @param colourPrint
-     * @param reBottom
-     * @param reCorners
-     * @param sealedTop
-     * @param quantity
+     * 
+     * 
+     * @param width width of the box
+     * @param length length of the box
+     * @param height height of the box
+     * @param grade grade of the box
+     * @param colourPrint the number of colours of the box
+     * @param reBottom weather the box has reinforcred bottom 
+     * @param reCorners weather the box has reinforcred corners 
+     * @param sealedTop the box has a sealable top
+     * @param quantity quantity of the box
      * @return the output code (which box has been created or Not)
      *
      * Adds a box to the ArrayList of Boxes if the box can be provided by
@@ -159,10 +161,10 @@ public class OrderManager {
 
     /**
      *
-     * @param grade
-     * @param colourPrint
-     * @param reBottom
-     * @param reCorners
+     * @param grade grade of the box
+     * @param colourPrint number of colours of the box
+     * @param reBottom if the box has a reinforced bottom 
+     * @param reCorners if the box has reinforced corners
      * @return the type of the box that can be created or -1 if not.
      * Selects the correct type of box based on inputs. -1 if cannot be created
      *
@@ -188,14 +190,9 @@ public class OrderManager {
 
     /**
      *
-     * @param boxHeight
-     * @param boxWidth
-     * @param boxLength
-     * @param quantity
-     * @return if all data is valid, return true.
-     * Checks if passed inputs are valid.
+     * @param userInput string to be checked if int
+     * @return true if input can be casted to an int
      */
-
     public boolean checkInputInt(String userInput) {
         try {
             Integer.parseInt(userInput);
@@ -214,7 +211,7 @@ public class OrderManager {
 
         /**
      *
-     * @param userInput
+     * @param userInput The string to be tested if it is a float
      * @return if User input is valid return true, else false
      * Validates user Input if float.
      */

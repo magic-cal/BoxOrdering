@@ -9,10 +9,10 @@ public class BoxType2 extends Box {
 
     /**
      *
-     * @param boxSize
-     * @param boxGrade
-     * @param boxSealableTop
-     * @param boxQuantity
+     * @param boxSize size of the box 
+     * @param boxGrade grade of the box 
+     * @param boxSealableTop if the box is sealable
+     * @param boxQuantity quantity of the box
      * Constructor for Box type 2. 
      */
     public BoxType2(float boxSize, int boxGrade, boolean boxSealableTop, int boxQuantity) {
